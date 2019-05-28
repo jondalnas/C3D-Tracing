@@ -1,0 +1,9 @@
+﻿  pch.cpp
+  Main.cpp
+c:\users\jonas\documents\programming\c++\c3d-tracing\c3dtracing\main.cpp(1): warning C4603: '_USE_MATH_DEFINES': macro is not defined or definition is different after precompiled header use
+  c:\users\jonas\documents\programming\c++\c3d-tracing\c3dtracing\main.cpp(1): note: Add macro to precompiled header instead of defining here
+  c:\users\jonas\documents\programming\c++\c3d-tracing\c3dtracing\main.cpp(3): note: use of precompiled header
+  Sphere.cpp
+  Vec3.cpp
+  Generating Code...
+  C3DTracing.vcxproj -> C:\Users\Jonas\Documents\Programming\C++\C3D-Tracing\x64\Debug\C3DTracing.exe

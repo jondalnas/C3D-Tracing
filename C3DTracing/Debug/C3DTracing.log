@@ -1,0 +1,5 @@
+﻿  Main.cpp
+c:\users\jonas\documents\programming\c++\helloworld\helloworld\main.cpp(1): warning C4603: '_USE_MATH_DEFINES': macro is not defined or definition is different after precompiled header use
+  c:\users\jonas\documents\programming\c++\helloworld\helloworld\main.cpp(1): note: Add macro to precompiled header instead of defining here
+  c:\users\jonas\documents\programming\c++\helloworld\helloworld\main.cpp(3): note: use of precompiled header
+  HelloWorld.vcxproj -> C:\Users\Jonas\Documents\Programming\C++\HelloWorld\Debug\HelloWorld.exe
