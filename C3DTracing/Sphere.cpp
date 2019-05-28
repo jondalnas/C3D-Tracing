@@ -3,15 +3,25 @@
 #include <cmath>
 #include <iostream>
 
-bool Sphere::intersects(Ray ray) {
+std::pair<Geometry::Hit, bool> Sphere::intersects(Ray ray) {
 	Vec3 toSphere = pos - ray.pos;
 	double distanceSqrt = toSphere.lengthSqrt();
 
 	double centerHit = ray.dir.dot(toSphere);
-	if (centerHit < 0) return false;
+	if (centerHit < 0) return{};
 
-	double closestDistance = sqrt(distanceSqrt - centerHit * centerHit);
-	if (closestDistance > radius) return false;
+	double closestDistanceSqrt = distanceSqrt - centerHit * centerHit;
+	if (closestDistanceSqrt > radius * radius) return{};
 
-	return true;
+	double t = sqrt(radius * radius - closestDistanceSqrt);
+	double minusT = centerHit - t;
+	double plusT = centerHit + t;
+
+	if (minusT > plusT) {
+		plusT = minusT;
+	}
+
+	Vec3 hitPos = ray.dir * plusT;
+
+	return { Hit{ plusT, hitPos, (hitPos - pos).normalized() }, true };
 }
