@@ -1,0 +1,3 @@
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/edit_cache.dir

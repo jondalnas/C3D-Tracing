@@ -1,0 +1,4 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug

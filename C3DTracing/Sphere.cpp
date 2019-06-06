@@ -23,5 +23,5 @@ std::pair<Geometry::Hit, bool> Sphere::intersects(Ray ray) {
 
 	Vec3 hitPos = ray.dir * plusT;
 
-	return { Hit{ plusT, hitPos, (hitPos - pos).normalized() }, true };
+	return { Hit{ plusT, hitPos, (hitPos - pos).normalized(), mat }, true };
 }

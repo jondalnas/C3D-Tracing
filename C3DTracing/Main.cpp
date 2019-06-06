@@ -1,9 +1,11 @@
 #include "pch.h"
 #include "Vec3.h"
 #include "Sphere.h"
+#include "Scene.h"
 #include <iostream>
 #include <cmath>
 #include <cstdio>
+#include <list>
 
 namespace {
 	double clamp(double v, double min, double max) { return v < min ? min : (v > max ? max : v); }
@@ -22,7 +24,8 @@ Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
 
 int main() {
-	Sphere s(Vec3(0, 0, 10), 3);
+	Scene scene;
+	scene.add(std::make_unique<Sphere>(Vec3(0, 0, 10), 3, Material(Vec3(1, 0, 1), Vec3(0, 1, 0))));
 
 	FILE *f = fopen("image.ppm", "w");
 	fprintf(f, "P3\n%d %d\n%d\n", WIDTH, HEIGHT, 255);
@@ -36,15 +39,9 @@ int main() {
 			auto rayDir = (xCam * xx + yCam * yy + camDir).normalized();
 			Ray ray(camPos, rayDir);
 
-			auto hit = s.intersects(ray);
+			auto color = scene.calculateColor(ray);
 
-			Vec3 col = Vec3();
-
-			if (hit.second) {
-				col = Vec3(1, 0, 1) * pow(rayDir.dot(hit.first.normal), 2);
-			}
-
-			fprintf(f, "%i %i %i ", rgbToInt(col.x), rgbToInt(col.y), rgbToInt(col.z));
+			fprintf(f, "%i %i %i ", rgbToInt(color.x), rgbToInt(color.y), rgbToInt(color.z));
 		}
 	}
 
