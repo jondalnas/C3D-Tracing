@@ -6,6 +6,7 @@
 #include <cmath>
 #include <cstdio>
 #include <list>
+#include <random>
 
 namespace {
 	double clamp(double v, double min, double max) { return v < min ? min : (v > max ? max : v); }
@@ -26,7 +27,9 @@ Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
 int main() {
 	Scene scene;
     scene.add(std::make_unique<Sphere>(Vec3(-3, 0, 10), 3, Material::materialWithDiffusion(Vec3(1, 1, 1))));
-    scene.add(std::make_unique<Sphere>(Vec3(3, 0, 10), 3, Material(Vec3(0, 0, 0), Vec3(1, 1, 0))));
+    scene.add(std::make_unique<Sphere>(Vec3(3, 0, 7), 3, Material(Vec3(0, 0, 0), Vec3(1, 1, 0))));
+
+    std::mt19937 rng(0);
 
 	FILE *f = fopen("image.ppm", "w");
 	fprintf(f, "P3\n%d %d\n%d\n", WIDTH, HEIGHT, 255);
@@ -40,7 +43,7 @@ int main() {
 			auto rayDir = (xCam * xx + yCam * yy + camDir).normalized();
 			Ray ray(camPos, rayDir);
 
-			auto color = scene.calculateColor(ray);
+			auto color = scene.calculateColor(ray, rng);
 
 			fprintf(f, "%i %i %i ", rgbToInt(color.x), rgbToInt(color.y), rgbToInt(color.z));
 		}
