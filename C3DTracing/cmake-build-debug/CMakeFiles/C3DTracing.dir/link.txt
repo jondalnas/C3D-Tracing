@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/C3DTracing.dir/Main.cpp.o CMakeFiles/C3DTracing.dir/Scene.cpp.o CMakeFiles/C3DTracing.dir/Sphere.cpp.o CMakeFiles/C3DTracing.dir/Vec3.cpp.o CMakeFiles/C3DTracing.dir/pch.cpp.o  -o C3DTracing 
+/usr/bin/c++  -g   CMakeFiles/C3DTracing.dir/Main.cpp.o CMakeFiles/C3DTracing.dir/Scene.cpp.o CMakeFiles/C3DTracing.dir/Sphere.cpp.o CMakeFiles/C3DTracing.dir/Vec3.cpp.o CMakeFiles/C3DTracing.dir/pch.cpp.o  -o C3DTracing 

@@ -25,7 +25,8 @@ Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
 
 int main() {
 	Scene scene;
-	scene.add(std::make_unique<Sphere>(Vec3(0, 0, 10), 3, Material(Vec3(1, 0, 1), Vec3(0, 1, 0))));
+    scene.add(std::make_unique<Sphere>(Vec3(-3, 0, 10), 3, Material::materialWithDiffusion(Vec3(1, 1, 1))));
+    scene.add(std::make_unique<Sphere>(Vec3(3, 0, 10), 3, Material(Vec3(0, 0, 0), Vec3(1, 1, 0))));
 
 	FILE *f = fopen("image.ppm", "w");
 	fprintf(f, "P3\n%d %d\n%d\n", WIDTH, HEIGHT, 255);

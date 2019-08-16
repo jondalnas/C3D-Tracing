@@ -75,5 +75,9 @@ public:
 
 		return Vec3(x / l, y / l, z / l);
 	}
+
+	bool isZero() {
+	    return x == 0 && y == 0 && z == 0;
+	}
 };
 

@@ -12,6 +12,10 @@ public:
 	Geometry(Vec3 pos, Material mat) : pos(pos), mat(mat) {}
 
 	struct Hit {
+	    Hit() {}
+        Hit(double distance, Vec3 pos, Vec3 normal, Material mat) : distance(distance), pos(pos), normal(normal), mat(mat) {}
+        Hit(Hit *hit) {distance = hit->distance; pos = hit->pos; normal = hit->normal; mat = hit->mat;}
+
 		double distance;
 		Vec3 pos;
 		Vec3 normal;
