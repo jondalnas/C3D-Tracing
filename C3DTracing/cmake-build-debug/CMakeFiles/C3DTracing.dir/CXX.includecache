@@ -16,6 +16,26 @@ Material.h
 utility
 -
 
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Main.cpp
+pch.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.h
+Vec3.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+Sphere.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.h
+Scene.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.h
+iostream
+-
+cmath
+-
+cstdio
+-
+list
+-
+random
+-
+
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h
 Vec3.h
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
@@ -24,14 +44,18 @@ Vec3.h
 Vec3.h
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.cpp
-pch.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.h
-Sphere.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.h
-cmath
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.h
+Vec3.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+Geometry.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
+Ray.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Ray.h
+vector
 -
-iostream
+memory
+-
+random
 -
 
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.h

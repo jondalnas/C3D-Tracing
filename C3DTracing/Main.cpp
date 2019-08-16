@@ -17,7 +17,7 @@ namespace {
 Vec3 camPos(0, 0, 0);
 Vec3 camDir(0, 0, 1);
 
-const int WIDTH = 640, HEIGHT = 480;
+const int WIDTH = 160, HEIGHT = 120;
 const auto aspectRatio = static_cast<double>(WIDTH) / HEIGHT;
 const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
@@ -26,8 +26,15 @@ Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
 
 int main() {
 	Scene scene;
-    scene.add(std::make_unique<Sphere>(Vec3(-3, 0, 10), 3, Material::materialWithDiffusion(Vec3(1, 1, 1))));
-    scene.add(std::make_unique<Sphere>(Vec3(3, 0, 7), 3, Material(Vec3(0, 0, 0), Vec3(1, 1, 0))));
+    scene.add(std::make_unique<Sphere>(Vec3(-503, 0, 0), 500, Material::materialWithDiffusion(Vec3(1, 0, 0))));
+    scene.add(std::make_unique<Sphere>(Vec3(503, 0, 0), 500, Material::materialWithDiffusion(Vec3(0, 1, 0))));
+    scene.add(std::make_unique<Sphere>(Vec3(0, 503, 0), 500, Material::materialWithDiffusion(Vec3(0.9, 0.9, 0.9))));
+    scene.add(std::make_unique<Sphere>(Vec3(0, -503, 0), 500, Material::materialWithDiffusion(Vec3(0.9, 0.9, 0.9))));
+    scene.add(std::make_unique<Sphere>(Vec3(0, 0, 520), 500, Material::materialWithDiffusion(Vec3(0.9, 0.9, 0.9))));
+    scene.add(std::make_unique<Sphere>(Vec3(0, 0, -480), 500, Material::materialWithDiffusion(Vec3(0.9, 0.9, 0.9))));
+    scene.add(std::make_unique<Sphere>(Vec3(1, 1.75, 13), 1.25, Material::materialWithDiffusion(Vec3(1, 1, 1))));
+    scene.add(std::make_unique<Sphere>(Vec3(-1, 1.75, 10), 1.25, Material::materialWithDiffusion(Vec3(1, 1, 1))));
+    scene.add(std::make_unique<Sphere>(Vec3(0, -3.05, 10), 1, Material(Vec3(0, 0, 0), Vec3(1, 1, 1))));
 
     std::mt19937 rng(0);
 
@@ -43,10 +50,17 @@ int main() {
 			auto rayDir = (xCam * xx + yCam * yy + camDir).normalized();
 			Ray ray(camPos, rayDir);
 
-			auto color = scene.calculateColor(ray, rng);
+			Vec3 color(0, 0, 0);
+			for (int i = 0; i < 20000; i++) {
+                color += scene.calculateColor(ray, rng);
+			}
+
+			color *= 1.0/20000.0;
 
 			fprintf(f, "%i %i %i ", rgbToInt(color.x), rgbToInt(color.y), rgbToInt(color.z));
 		}
+
+		std::cout << ((double) y/HEIGHT) * 100.0 << "% done" << std::endl;
 	}
 
 	fclose(f);
