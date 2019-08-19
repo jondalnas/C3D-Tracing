@@ -3,7 +3,7 @@
 #include <vector>
 
 Vec3 Scene::calculateColor(const Ray &ray, std::mt19937 &rng) {
-    if (ray.itterations > 3) return Vec3(0, 0, 0);
+    if (ray.itterations > 5) return Vec3(0, 0, 0);
 
     Geometry::Hit *closest = nullptr;
 
@@ -19,23 +19,20 @@ Vec3 Scene::calculateColor(const Ray &ray, std::mt19937 &rng) {
     }
 
     if (closest) {
-        if (closest->mat.emission.isZero()) {
-            std::uniform_real_distribution<> unit(0.0, 1.0);
+        std::uniform_real_distribution<> unit(0.0, 1.0);
 
-            Vec3 normal(closest->normal.normalized());
-            Vec3 pos(closest->pos);
-            Vec3 tangent(normal.cross(abs(normal.x) == 1 ? Vec3(0.0, 1.0, 0.0) : Vec3(1.0, 0.0, 0.0)).normalize());
-            Vec3 bitangent(normal.cross(tangent));
-            Vec3 dir((normal * unit(rng) + tangent * (unit(rng) * 2 - 1) +
-                      bitangent * (unit(rng) * 2 - 1)).normalize());
+        Vec3 normal(closest->normal.normalized());
+        Vec3 pos(closest->pos);
+        Vec3 tangent(normal.cross(abs(normal.x) == 1 ? Vec3(0.0, 1.0, 0.0) : Vec3(1.0, 0.0, 0.0)).normalize());
+        Vec3 bitangent(normal.cross(tangent));
+        Vec3 dir((normal * unit(rng) + tangent * (unit(rng) * 2 - 1) +
+                  bitangent * (unit(rng) * 2 - 1)).normalize());
 
-            Ray newRay(pos, dir);
-            newRay.itterations = ray.itterations + 1;
-            Vec3 newColor = calculateColor(newRay, rng);
+        Ray newRay(pos, dir);
+        newRay.itterations = ray.itterations + 1;
+        Vec3 newColor = calculateColor(newRay, rng);
 
-            if (!newColor.isZero()) color += newColor * 0.5 + closest->mat.diffusion * 0.5;
-        } else
-            color = Vec3(closest->mat.emission);
+        color += closest->mat.emission + (newColor * closest->mat.diffusion);
     }
 
     return color;

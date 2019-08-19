@@ -4,7 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.cpp" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/Disk.cpp.o"
   "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Main.cpp" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/Main.cpp.o"
+  "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.cpp" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/Plane.cpp.o"
   "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.cpp" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/Scene.cpp.o"
   "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.cpp" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/Sphere.cpp.o"
   "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.cpp" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/Vec3.cpp.o"

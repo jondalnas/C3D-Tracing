@@ -123,6 +123,33 @@ C3DTracing/fast:
 	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/build
 .PHONY : C3DTracing/fast
 
+Disk.o: Disk.cpp.o
+
+.PHONY : Disk.o
+
+# target to build an object file
+Disk.cpp.o:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Disk.cpp.o
+.PHONY : Disk.cpp.o
+
+Disk.i: Disk.cpp.i
+
+.PHONY : Disk.i
+
+# target to preprocess a source file
+Disk.cpp.i:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Disk.cpp.i
+.PHONY : Disk.cpp.i
+
+Disk.s: Disk.cpp.s
+
+.PHONY : Disk.s
+
+# target to generate assembly for a file
+Disk.cpp.s:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Disk.cpp.s
+.PHONY : Disk.cpp.s
+
 Main.o: Main.cpp.o
 
 .PHONY : Main.o
@@ -149,6 +176,33 @@ Main.s: Main.cpp.s
 Main.cpp.s:
 	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Main.cpp.s
 .PHONY : Main.cpp.s
+
+Plane.o: Plane.cpp.o
+
+.PHONY : Plane.o
+
+# target to build an object file
+Plane.cpp.o:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Plane.cpp.o
+.PHONY : Plane.cpp.o
+
+Plane.i: Plane.cpp.i
+
+.PHONY : Plane.i
+
+# target to preprocess a source file
+Plane.cpp.i:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Plane.cpp.i
+.PHONY : Plane.cpp.i
+
+Plane.s: Plane.cpp.s
+
+.PHONY : Plane.s
+
+# target to generate assembly for a file
+Plane.cpp.s:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Plane.cpp.s
+.PHONY : Plane.cpp.s
 
 Scene.o: Scene.cpp.o
 
@@ -267,9 +321,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... C3DTracing"
 	@echo "... edit_cache"
+	@echo "... Disk.o"
+	@echo "... Disk.i"
+	@echo "... Disk.s"
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
+	@echo "... Plane.o"
+	@echo "... Plane.i"
+	@echo "... Plane.s"
 	@echo "... Scene.o"
 	@echo "... Scene.i"
 	@echo "... Scene.s"

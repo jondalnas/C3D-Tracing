@@ -17,11 +17,13 @@ std::pair<Geometry::Hit, bool> Sphere::intersects(Ray ray) {
 	double minusT = centerHit - t;
 	double plusT = centerHit + t;
 
+	if (minusT < 1e-4 && plusT < 1e-4) return{};
+
 	if (minusT > plusT) {
 		std::swap(plusT, minusT);
 	}
 
-	Vec3 hitPos = ray.dir * minusT;
+	Vec3 hitPos = ray.dir * minusT + ray.pos;
 
     return { Hit{ minusT, hitPos, (hitPos - pos).normalized(), mat }, true };
 }

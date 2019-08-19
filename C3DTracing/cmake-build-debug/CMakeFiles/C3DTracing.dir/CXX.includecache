@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.h
+Plane.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h
+
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
 Vec3.h
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
@@ -25,6 +29,10 @@ Sphere.h
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.h
 Scene.h
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.h
+Plane.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h
+Disk.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.h
 iostream
 -
 cmath
@@ -39,6 +47,10 @@ random
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h
 Vec3.h
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h
+Geometry.h
+/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
 
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Ray.h
 Vec3.h
@@ -64,6 +76,8 @@ Geometry.h
 
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
 cmath
+-
+iostream
 -
 
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.h

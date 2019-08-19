@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <iostream>
 
 class Vec3 {
 public:
@@ -7,9 +8,13 @@ public:
 	Vec3() : x(0), y(0), z(0) {}
 	Vec3(double x, double y, double z) : x(x), y(y), z(z) {}
 
-	Vec3 operator*(double k) {
-		return Vec3(x * k, y * k, z * k);
-	}
+    Vec3 operator*(double k) {
+        return Vec3(x * k, y * k, z * k);
+    }
+
+    Vec3 operator*(Vec3 v) {
+        return Vec3(x * v.x, y * v.y, z * v.z);
+    }
 
 	Vec3 operator+(Vec3 v) {
 		return Vec3(x + v.x, y + v.y, z + v.z);
@@ -19,15 +24,24 @@ public:
 		return Vec3(x - v.x, y - v.y, z - v.z);
 	}
 
-	Vec3 operator*=(double k) {
-		x *= k;
-		y *= k;
-		z *= k;
+    Vec3 operator*=(double k) {
+        x *= k;
+        y *= k;
+        z *= k;
 
-		return *this;
-	}
+        return *this;
+    }
 
-	Vec3 operator+=(Vec3 v) {
+
+    Vec3 operator*=(Vec3 v) {
+        x *= v.x;
+        y *= v.y;
+        z *= v.z;
+
+        return *this;
+    }
+
+    Vec3 operator+=(Vec3 v) {
 		x += v.x;
 		y += v.y;
 		z += v.z;
@@ -79,5 +93,6 @@ public:
 	bool isZero() {
 	    return x == 0 && y == 0 && z == 0;
 	}
-};
 
+    friend std::ostream& operator<<(std::ostream &strm, const Vec3 &v);
+};

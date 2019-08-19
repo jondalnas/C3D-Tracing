@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.cpp">
+			<Option target="C3DTracing"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.h">
+			<Option target="C3DTracing"/>
+		</Unit>
 		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h">
 			<Option target="C3DTracing"/>
 		</Unit>
@@ -89,6 +95,12 @@
 			<Option target="C3DTracing"/>
 		</Unit>
 		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h">
+			<Option target="C3DTracing"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.cpp">
+			<Option target="C3DTracing"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h">
 			<Option target="C3DTracing"/>
 		</Unit>
 		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Ray.h">

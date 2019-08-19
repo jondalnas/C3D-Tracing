@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/C3DTracing.dir/Disk.cpp.o"
   "CMakeFiles/C3DTracing.dir/Main.cpp.o"
+  "CMakeFiles/C3DTracing.dir/Plane.cpp.o"
   "CMakeFiles/C3DTracing.dir/Scene.cpp.o"
   "CMakeFiles/C3DTracing.dir/Sphere.cpp.o"
   "CMakeFiles/C3DTracing.dir/Vec3.cpp.o"
