@@ -9,11 +9,14 @@
 #include <cstdio>
 #include <list>
 #include <random>
+#include <chrono>
+#include <thread>
+#include <mutex>
 
 namespace {
-	double clamp(double v, double min, double max) { return v < min ? min : (v > max ? max : v); }
+    double clamp(double v, double min, double max) { return v < min ? min : (v > max ? max : v); }
 
-	int rgbToInt(double c) { return int(pow(clamp(c, 0.0, 1.0), 1.0 / 2.2) * 255 + 0.5); }
+    int rgbToInt(double c) { return int(pow(clamp(c, 0.0, 1.0), 1.0 / 2.2) * 255 + 0.5); }
 }
 
 Vec3 camPos(0, 0, 0);
@@ -25,12 +28,12 @@ const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
 Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
-const auto numSamples = 20000;
+const auto numSamples = 100;
 
 int main() {
-	Scene scene;
+    Scene scene;
 
-	scene.add(std::make_unique<Disk>(Vec3(0, -3, 10), Vec3(0, 1, 0), 1.0, Material(Vec3(0.8, 0.2, 0.8), Vec3(1, 1, 1))));
+    scene.add(std::make_unique<Disk>(Vec3(0, -3, 10), Vec3(0, 1, 0), 1.0, Material(Vec3(0.8, 0.2, 0.8), Vec3(1, 1, 1))));
     scene.add(std::make_unique<Plane>(Vec3(-3, 0, 0), Vec3(1, 0, 0), Material::materialWithDiffusion(Vec3(1, 0, 0))));
     scene.add(std::make_unique<Plane>(Vec3(3, 0, 0), Vec3(-1, 0, 0), Material::materialWithDiffusion(Vec3(0, 1, 0))));
     scene.add(std::make_unique<Plane>(Vec3(0, 3, 0), Vec3(0, -1, 0), Material::materialWithDiffusion(Vec3(1, 1, 1))));
@@ -40,34 +43,96 @@ int main() {
     scene.add(std::make_unique<Sphere>(Vec3(1, 1.75, 13), 1.25, Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_unique<Sphere>(Vec3(-1, 1.75, 10), 1.25, Material::materialWithDiffusion(Vec3(1, 1, 1))));
 
+    std::vector<Vec3> _output;
+    _output.reserve(WIDTH * HEIGHT);
+    for (auto i = 0u; i < WIDTH * HEIGHT; i++) {
+        _output.emplace_back(Vec3());
+    }
+
+    struct Pixel {
+    public:
+        int x, y;
+
+        Pixel(int x, int y) : x(x), y(y) {
+        }
+
+        Pixel() {}
+    };
+
+    struct Pixels {
+    public:
+        int widht, height;
+        std::mutex mutex;
+
+        std::vector<Pixel> pixels;
+        std::vector<Pixel> closed;
+        Pixels(int width, int height) : widht(width), height(height) {
+            pixels.reserve(width * height);
+            closed.reserve(width * height);
+
+            for (int y = 0; y  < height; y++) {
+                for (int x = 0; x < width; x++) {
+                    pixels.emplace_back(Pixel(x, y));
+                }
+            }
+        }
+
+        std::pair<Pixel, bool> next() {
+            std::unique_lock lock(mutex);
+
+            if (pixels.empty())
+                return {};
+
+            auto pixel = pixels.back();
+
+            closed.emplace_back(std::move(pixel));
+            pixels.pop_back();
+
+            if ((pixels.size() & 255) == 0) std::cout << (1.0 - (pixels.size() / (float) (WIDTH * HEIGHT))) * 100.0 << std::endl;
+
+            lock.unlock();
+
+            return {pixel, true};
+        }
+    };
+
+    Pixels pixelArray(WIDTH, HEIGHT);
+
     std::mt19937 rng(0);
 
-	FILE *f = fopen("image.ppm", "w");
-	fprintf(f, "P3\n%d %d\n%d\n", WIDTH, HEIGHT, 255);
+    std::vector<std::thread> threads;
+    threads.reserve(std::thread::hardware_concurrency());
+    for (auto i = 0u; i < std::thread::hardware_concurrency(); i++) {
+        threads.emplace_back([&] {
+            std::pair<Pixel, bool> pixel;
+            while ((pixel = pixelArray.next()).second) {
+                auto xx = (static_cast<double>(pixel.first.x) / WIDTH - 0.5) * 2;
+                auto yy = (static_cast<double>(pixel.first.y) / HEIGHT - 0.5) * 2;
 
-	for (int y = 0; y < HEIGHT; y++) {
-		auto yy = (static_cast<double>(y) / HEIGHT - 0.5) * 2;
+                auto rayDir = (xCam * xx + yCam * yy + camDir).normalized();
+                Ray ray(camPos, rayDir);
 
-		for (int x = 0; x < WIDTH; x++) {
-			auto xx = (static_cast<double>(x) / WIDTH - 0.5) * 2;
+                for (int i = 0; i < numSamples; i++) {
+                    Vec3 color = scene.calculateColor(ray, rng);
+                    color *= 1.0 / numSamples;
+                    _output[pixel.first.x + pixel.first.y * WIDTH] += color;
+                }
+            }
+        });
+    }
 
-			auto rayDir = (xCam * xx + yCam * yy + camDir).normalized();
-			Ray ray(camPos, rayDir);
+    for (auto &thread : threads) {
+        thread.join();
+    }
 
-            Vec3 color(0, 0, 0);
-			for (int i = 0; i < numSamples; i++) {
-                color += scene.calculateColor(ray, rng);
-			}
+    FILE *f = fopen("image.ppm", "w");
+    fprintf(f, "P3\n%d %d\n%d\n", WIDTH, HEIGHT, 255);
 
-			color *= 1.0/numSamples;
+    for (auto c : _output) {
+        fprintf(f, "%i %i %i ", rgbToInt(c.x), rgbToInt(c.y), rgbToInt(c.z));
+    }
 
-			fprintf(f, "%i %i %i ", rgbToInt(color.x), rgbToInt(color.y), rgbToInt(color.z));
-		}
+    fclose(f);
 
-		std::cout << ((double) y/HEIGHT) * 100.0 << "% done" << std::endl;
-	}
-
-	fclose(f);
-
-	return 0;
+    return 0;
 }

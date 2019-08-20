@@ -4,7 +4,7 @@
 
 class Vec3 {
 public:
-	double x, y, z;
+    double x, y, z;
 	Vec3() : x(0), y(0), z(0) {}
 	Vec3(double x, double y, double z) : x(x), y(y), z(z) {}
 
@@ -57,7 +57,7 @@ public:
 		return *this;
 	}
 
-	double dot(Vec3 v) {
+    double dot(Vec3 v) {
 		return x * v.x + y * v.y + z * v.z;
 	}
 
@@ -67,16 +67,16 @@ public:
 					x * v.y - y * v.x);
 	}
 
-	double length() {
+    double length() {
 		return sqrt(x * x + y * y + z * z);
 	}
 
-	double lengthSqrt() {
+    double lengthSqrt() {
 		return x * x + y * y + z * z;
 	}
 
 	Vec3 normalize() {
-		double l = length();
+        double l = length();
 		x /= l;
 		y /= l;
 		z /= l;
@@ -85,7 +85,7 @@ public:
 	}
 
 	Vec3 normalized() {
-		double l = length();
+        float l = length();
 
 		return Vec3(x / l, y / l, z / l);
 	}

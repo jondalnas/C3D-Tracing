@@ -1,6 +1,5 @@
 #include "Scene.h"
 #include <iostream>
-#include <vector>
 
 Vec3 Scene::calculateColor(const Ray &ray, std::mt19937 &rng) {
     if (ray.itterations > 5) return Vec3(0, 0, 0);
@@ -32,7 +31,7 @@ Vec3 Scene::calculateColor(const Ray &ray, std::mt19937 &rng) {
         newRay.itterations = ray.itterations + 1;
         Vec3 newColor = calculateColor(newRay, rng);
 
-        color += closest->mat.emission + (newColor * closest->mat.diffusion);
+        color = closest->mat.emission + (newColor * closest->mat.diffusion);
     }
 
     return color;

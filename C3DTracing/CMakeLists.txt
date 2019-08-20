@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.6)
 project(C3DTracing)
 
 set(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_CXX_FLAGS -pthread)
 
 add_compile_options(-Wall -Werror -Wextra -march=native -g)
 
