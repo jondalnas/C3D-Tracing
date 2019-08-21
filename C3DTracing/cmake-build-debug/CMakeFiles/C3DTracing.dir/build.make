@@ -83,9 +83,22 @@ CMakeFiles/C3DTracing.dir/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/C3DTracing.dir/Main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Main.cpp" -o CMakeFiles/C3DTracing.dir/Main.cpp.s
 
+CMakeFiles/C3DTracing.dir/Math.cpp.o: CMakeFiles/C3DTracing.dir/flags.make
+CMakeFiles/C3DTracing.dir/Math.cpp.o: ../Math.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/C3DTracing.dir/Math.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C3DTracing.dir/Math.cpp.o -c "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Math.cpp"
+
+CMakeFiles/C3DTracing.dir/Math.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/C3DTracing.dir/Math.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Math.cpp" > CMakeFiles/C3DTracing.dir/Math.cpp.i
+
+CMakeFiles/C3DTracing.dir/Math.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/C3DTracing.dir/Math.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Math.cpp" -o CMakeFiles/C3DTracing.dir/Math.cpp.s
+
 CMakeFiles/C3DTracing.dir/Plane.cpp.o: CMakeFiles/C3DTracing.dir/flags.make
 CMakeFiles/C3DTracing.dir/Plane.cpp.o: ../Plane.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/C3DTracing.dir/Plane.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/C3DTracing.dir/Plane.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C3DTracing.dir/Plane.cpp.o -c "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.cpp"
 
 CMakeFiles/C3DTracing.dir/Plane.cpp.i: cmake_force
@@ -98,7 +111,7 @@ CMakeFiles/C3DTracing.dir/Plane.cpp.s: cmake_force
 
 CMakeFiles/C3DTracing.dir/Scene.cpp.o: CMakeFiles/C3DTracing.dir/flags.make
 CMakeFiles/C3DTracing.dir/Scene.cpp.o: ../Scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/C3DTracing.dir/Scene.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/C3DTracing.dir/Scene.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C3DTracing.dir/Scene.cpp.o -c "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.cpp"
 
 CMakeFiles/C3DTracing.dir/Scene.cpp.i: cmake_force
@@ -111,7 +124,7 @@ CMakeFiles/C3DTracing.dir/Scene.cpp.s: cmake_force
 
 CMakeFiles/C3DTracing.dir/Sphere.cpp.o: CMakeFiles/C3DTracing.dir/flags.make
 CMakeFiles/C3DTracing.dir/Sphere.cpp.o: ../Sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/C3DTracing.dir/Sphere.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/C3DTracing.dir/Sphere.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C3DTracing.dir/Sphere.cpp.o -c "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.cpp"
 
 CMakeFiles/C3DTracing.dir/Sphere.cpp.i: cmake_force
@@ -124,7 +137,7 @@ CMakeFiles/C3DTracing.dir/Sphere.cpp.s: cmake_force
 
 CMakeFiles/C3DTracing.dir/Vec3.cpp.o: CMakeFiles/C3DTracing.dir/flags.make
 CMakeFiles/C3DTracing.dir/Vec3.cpp.o: ../Vec3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/C3DTracing.dir/Vec3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/C3DTracing.dir/Vec3.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C3DTracing.dir/Vec3.cpp.o -c "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.cpp"
 
 CMakeFiles/C3DTracing.dir/Vec3.cpp.i: cmake_force
@@ -137,7 +150,7 @@ CMakeFiles/C3DTracing.dir/Vec3.cpp.s: cmake_force
 
 CMakeFiles/C3DTracing.dir/pch.cpp.o: CMakeFiles/C3DTracing.dir/flags.make
 CMakeFiles/C3DTracing.dir/pch.cpp.o: ../pch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/C3DTracing.dir/pch.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/C3DTracing.dir/pch.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/C3DTracing.dir/pch.cpp.o -c "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.cpp"
 
 CMakeFiles/C3DTracing.dir/pch.cpp.i: cmake_force
@@ -152,6 +165,7 @@ CMakeFiles/C3DTracing.dir/pch.cpp.s: cmake_force
 C3DTracing_OBJECTS = \
 "CMakeFiles/C3DTracing.dir/Disk.cpp.o" \
 "CMakeFiles/C3DTracing.dir/Main.cpp.o" \
+"CMakeFiles/C3DTracing.dir/Math.cpp.o" \
 "CMakeFiles/C3DTracing.dir/Plane.cpp.o" \
 "CMakeFiles/C3DTracing.dir/Scene.cpp.o" \
 "CMakeFiles/C3DTracing.dir/Sphere.cpp.o" \
@@ -163,6 +177,7 @@ C3DTracing_EXTERNAL_OBJECTS =
 
 C3DTracing: CMakeFiles/C3DTracing.dir/Disk.cpp.o
 C3DTracing: CMakeFiles/C3DTracing.dir/Main.cpp.o
+C3DTracing: CMakeFiles/C3DTracing.dir/Math.cpp.o
 C3DTracing: CMakeFiles/C3DTracing.dir/Plane.cpp.o
 C3DTracing: CMakeFiles/C3DTracing.dir/Scene.cpp.o
 C3DTracing: CMakeFiles/C3DTracing.dir/Sphere.cpp.o
@@ -170,7 +185,7 @@ C3DTracing: CMakeFiles/C3DTracing.dir/Vec3.cpp.o
 C3DTracing: CMakeFiles/C3DTracing.dir/pch.cpp.o
 C3DTracing: CMakeFiles/C3DTracing.dir/build.make
 C3DTracing: CMakeFiles/C3DTracing.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable C3DTracing"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable C3DTracing"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/C3DTracing.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

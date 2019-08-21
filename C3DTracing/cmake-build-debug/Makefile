@@ -177,6 +177,33 @@ Main.cpp.s:
 	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Main.cpp.s
 .PHONY : Main.cpp.s
 
+Math.o: Math.cpp.o
+
+.PHONY : Math.o
+
+# target to build an object file
+Math.cpp.o:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Math.cpp.o
+.PHONY : Math.cpp.o
+
+Math.i: Math.cpp.i
+
+.PHONY : Math.i
+
+# target to preprocess a source file
+Math.cpp.i:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Math.cpp.i
+.PHONY : Math.cpp.i
+
+Math.s: Math.cpp.s
+
+.PHONY : Math.s
+
+# target to generate assembly for a file
+Math.cpp.s:
+	$(MAKE) -f CMakeFiles/C3DTracing.dir/build.make CMakeFiles/C3DTracing.dir/Math.cpp.s
+.PHONY : Math.cpp.s
+
 Plane.o: Plane.cpp.o
 
 .PHONY : Plane.o
@@ -327,6 +354,9 @@ help:
 	@echo "... Main.o"
 	@echo "... Main.i"
 	@echo "... Main.s"
+	@echo "... Math.o"
+	@echo "... Math.i"
+	@echo "... Math.s"
 	@echo "... Plane.o"
 	@echo "... Plane.i"
 	@echo "... Plane.s"

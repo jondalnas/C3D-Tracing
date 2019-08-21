@@ -1,12 +1,11 @@
 #include "Scene.h"
+#include "Math.h"
 #include <iostream>
 
 Vec3 Scene::calculateColor(const Ray &ray, std::mt19937 &rng) {
     if (ray.itterations > 5) return Vec3(0, 0, 0);
 
     Geometry::Hit *closest = nullptr;
-
-    Vec3 color(0, 0, 0);
 
     for (auto &g : scene_) {
         auto h = g->intersects(ray);
@@ -31,8 +30,11 @@ Vec3 Scene::calculateColor(const Ray &ray, std::mt19937 &rng) {
         newRay.itterations = ray.itterations + 1;
         Vec3 newColor = calculateColor(newRay, rng);
 
-        color = closest->mat.emission + (newColor * closest->mat.diffusion);
+        Vec3 reflectDir = Math::reflect(ray.dir, normal);
+        double BFDR = powf(std::max(reflectDir.dot(dir), 0.0), closest->mat.specularDamp) * closest->mat.reflectivity + 1;
+
+        return closest->mat.emission + (newColor * closest->mat.diffusion * (1 + BFDR));
     }
 
-    return color;
+    return Vec3();
 }

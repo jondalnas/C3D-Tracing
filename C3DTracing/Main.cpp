@@ -28,7 +28,8 @@ const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
 Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
-const auto numSamples = 100;
+const auto numSamples = 20000;
+std::chrono::time_point startTime = std::chrono::steady_clock::now();
 
 int main() {
     Scene scene;
@@ -40,8 +41,10 @@ int main() {
     scene.add(std::make_unique<Plane>(Vec3(0, -3, 0), Vec3(0, 1, 0), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_unique<Plane>(Vec3(0, 0, 20), Vec3(0, 0, -1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_unique<Plane>(Vec3(0, 0, -20), Vec3(0, 0, 1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
-    scene.add(std::make_unique<Sphere>(Vec3(1, 1.75, 13), 1.25, Material::materialWithDiffusion(Vec3(1, 1, 1))));
-    scene.add(std::make_unique<Sphere>(Vec3(-1, 1.75, 10), 1.25, Material::materialWithDiffusion(Vec3(1, 1, 1))));
+    scene.add(std::make_unique<Sphere>(Vec3(1, 1.75, 13), 1.25, Material(Vec3(1, 1, 1), 100, 10)));
+    scene.add(std::make_unique<Sphere>(Vec3(-1, 1.75, 10), 1.25, Material(Vec3(1, 1, 1), 100, 10)));
+
+    startTime = std::chrono::steady_clock::now();
 
     std::vector<Vec3> _output;
     _output.reserve(WIDTH * HEIGHT);
@@ -88,7 +91,12 @@ int main() {
             closed.emplace_back(std::move(pixel));
             pixels.pop_back();
 
-            if ((pixels.size() & 255) == 0) std::cout << (1.0 - (pixels.size() / (float) (WIDTH * HEIGHT))) * 100.0 << std::endl;
+            if ((pixels.size() & 255) == 0) {
+                double deltaTime = (std::chrono::steady_clock::now() - startTime).count() / 1e9;
+                std::cout << (1.0 - (pixels.size() / (float) (WIDTH * HEIGHT))) * 100.0 << "%" << ", ETA "
+                          << (deltaTime / closed.size()) *
+                             pixels.size() << " seconds" << std::endl;
+            }
 
             lock.unlock();
 

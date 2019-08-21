@@ -20,6 +20,10 @@ CMakeFiles/C3DTracing.dir/Main.cpp.o: ../Sphere.h
 CMakeFiles/C3DTracing.dir/Main.cpp.o: ../Vec3.h
 CMakeFiles/C3DTracing.dir/Main.cpp.o: ../pch.h
 
+CMakeFiles/C3DTracing.dir/Math.cpp.o: ../Math.cpp
+CMakeFiles/C3DTracing.dir/Math.cpp.o: ../Math.h
+CMakeFiles/C3DTracing.dir/Math.cpp.o: ../Vec3.h
+
 CMakeFiles/C3DTracing.dir/Plane.cpp.o: ../Geometry.h
 CMakeFiles/C3DTracing.dir/Plane.cpp.o: ../Material.h
 CMakeFiles/C3DTracing.dir/Plane.cpp.o: ../Plane.cpp
@@ -29,6 +33,7 @@ CMakeFiles/C3DTracing.dir/Plane.cpp.o: ../Vec3.h
 
 CMakeFiles/C3DTracing.dir/Scene.cpp.o: ../Geometry.h
 CMakeFiles/C3DTracing.dir/Scene.cpp.o: ../Material.h
+CMakeFiles/C3DTracing.dir/Scene.cpp.o: ../Math.h
 CMakeFiles/C3DTracing.dir/Scene.cpp.o: ../Ray.h
 CMakeFiles/C3DTracing.dir/Scene.cpp.o: ../Scene.cpp
 CMakeFiles/C3DTracing.dir/Scene.cpp.o: ../Scene.h

@@ -7,4 +7,4 @@ SET(CMAKE_CXX_FLAGS -pthread)
 add_compile_options(-Wall -Werror -Wextra -march=native -g)
 
 file(GLOB source *.cpp *.h)
-add_executable(C3DTracing ${source} Scene.h Scene.cpp Material.h Plane.cpp Plane.h Disk.cpp Disk.h)
+add_executable(C3DTracing ${source} Scene.h Scene.cpp Material.h Plane.cpp Plane.h Disk.cpp Disk.h Math.cpp Math.h)

@@ -97,6 +97,12 @@
 		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h">
 			<Option target="C3DTracing"/>
 		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Math.cpp">
+			<Option target="C3DTracing"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Math.h">
+			<Option target="C3DTracing"/>
+		</Unit>
 		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
