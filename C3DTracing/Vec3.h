@@ -56,10 +56,13 @@ public:
 
 		return *this;
 	}
+    bool operator==(Vec3 v) {
+        return x == v.x && y == v.y && z == v.z;
+    }
 
     double dot(Vec3 v) {
-		return x * v.x + y * v.y + z * v.z;
-	}
+        return x * v.x + y * v.y + z * v.z;
+    }
 
 	Vec3 cross(Vec3 v) {
 		return Vec3(y * v.z - z * v.y,
@@ -76,7 +79,11 @@ public:
 	}
 
 	Vec3 normalize() {
-        double l = length();
+        double l = lengthSqrt();
+        if (l == 1) return *this;
+
+        l = sqrt(l);
+
 		x /= l;
 		y /= l;
 		z /= l;
@@ -85,7 +92,10 @@ public:
 	}
 
 	Vec3 normalized() {
-        float l = length();
+	    double l = lengthSqrt();
+	    if (l == 1) return Vec3(*this);
+
+	    l = sqrt(l);
 
 		return Vec3(x / l, y / l, z / l);
 	}

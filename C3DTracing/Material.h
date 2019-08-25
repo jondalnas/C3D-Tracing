@@ -16,8 +16,37 @@ public:
         return {Vec3(0, 0, 0), emission};
     }
 
+    static Material reflectiveMaterial() {
+        Material mat = Material();
+        mat.reflective = true;
+        return mat;
+    }
+
+    static Material refractiveMaterial(double refractiveIndex) {
+        Material mat = Material();
+        mat.refractiveIndex = refractiveIndex;
+        return mat;
+    }
+
+    Material operator+(Material mat) {
+        Material result = *this;
+
+        result.diffusion += mat.diffusion;
+        result.emission += mat.emission;
+        result.specularDamp += mat.specularDamp;
+        result.reflectivity += mat.reflectivity;
+        if (mat.reflective)
+            result.reflective = mat.reflective;
+        if (mat.refractiveIndex != -1 && result.refractiveIndex != -1) result.refractiveIndex += mat.refractiveIndex;
+        else if (result.refractiveIndex == -1 && result.refractiveIndex != -1) result.refractiveIndex = mat.refractiveIndex;
+
+        return result;
+    }
+
     Vec3 diffusion;
     Vec3 emission;
     double specularDamp = 0;
     double reflectivity = 0;
+    bool reflective = false;
+    double refractiveIndex = -1;
 };

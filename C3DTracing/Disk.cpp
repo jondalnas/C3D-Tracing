@@ -1,6 +1,6 @@
 #include "Disk.h"
 
-std::pair<Geometry::Hit, bool> Disk::intersects(Ray ray) {
+std::pair<Geometry::Hit, bool> Disk::intersects(Ray *ray) {
     auto hit = Plane::intersects(ray);
 
     if (!hit.second) return hit;
