@@ -2,41 +2,48 @@
 #include "Math.h"
 #include <iostream>
 
-Vec3 Scene::calculateColor(Ray &ray, std::mt19937 &rng) {
-    if (ray.itterations > 5) return Vec3(0, 0, 0);
+Vec3 Scene::calculateColor(Ray &ray, std::mt19937 &rng, std::pair<Geometry::Hit, bool> hit = {}) {
+    if (ray.iterations > 3) return Vec3();
 
-    Geometry::Hit *closest = nullptr;
+    std::unique_ptr<Geometry::Hit> closest = nullptr;
 
-    for (auto &g : scene_) {
-        auto h = g->intersects(&ray);
+    if (!hit.second) {
+        auto h = findGeometry(ray);
 
-        if (h.second && (closest == nullptr || h.first.distance < closest->distance)) {
-            Geometry::Hit clone = Geometry::Hit(h.first);
-            closest = &clone;
+        if (h.second) {
+            closest = std::make_unique<Geometry::Hit>(h.first);
         }
-    }
+    } else closest = std::make_unique<Geometry::Hit>(hit.first);
 
     if (closest) {
-        std::uniform_real_distribution<> unit(0.0, 1.0);
+        if (!closest->mat.emission.isZero()) return closest->mat.emission;
 
         Vec3 normal(closest->normal);
         Vec3 pos(closest->pos);
         if (!closest->mat.reflective && closest->mat.refractiveIndex == -1) {
-            Vec3 tangent(normal.cross(abs(normal.x) == 1 ? Vec3(0.0, 1.0, 0.0) : Vec3(1.0, 0.0, 0.0)).normalize());
-            Vec3 bitangent(normal.cross(tangent));
-            Vec3 dir((normal * unit(rng) + tangent * (unit(rng) * 2 - 1) +
-                      bitangent * (unit(rng) * 2 - 1)).normalize());
+            Vec3 dir = Math::hemisphere(normal, rng);
+
+            double cosTheta = dir.dot(normal);
+
+            //Vec3 reflectDir = Math::reflect(ray.dir, normal);
+            //auto BFDR = (powf(std::max(reflectDir.dot(dir), 0.0), closest->mat.specularDamp) * closest->mat.reflectivity / M_PI);
+
+            double pdf = cosTheta * M_1_PI;
+
+            std::uniform_real_distribution<> unit(0.0, 1.0);
+            //Russian roulette, we make a value named q and set it to the probability that the ray is getting terminated
+            //then we multiply the result with 1/(1-q), so we don't lose any energy from this action
+            double q = cosTheta;
+            if (unit(rng) > q) return Vec3();//closest->mat.emission + (closest->mat.diffusion * BFDR * dir.dot(normal) * (1 / pdf));
+
+            double loss = 1.0 / q;
 
             Ray newRay(pos, dir);
             newRay.refractiveIndex = ray.refractiveIndex;
-            newRay.itterations = ray.itterations + 1;
+            newRay.iterations = ray.iterations + 1;
             Vec3 newColor = calculateColor(newRay, rng);
 
-            Vec3 reflectDir = Math::reflect(ray.dir, normal);
-            double BFDR =
-                    powf(std::max(reflectDir.dot(dir), 0.0), closest->mat.specularDamp) * closest->mat.reflectivity;
-
-            return closest->mat.emission + (newColor * closest->mat.diffusion * (1 + BFDR));
+            return newColor * closest->mat.diffusion * cosTheta * M_1_PI * loss * (1 / pdf);
         } else {
             Vec3 reflectColor;
             if (closest->mat.reflective) {
@@ -44,7 +51,7 @@ Vec3 Scene::calculateColor(Ray &ray, std::mt19937 &rng) {
 
                 Ray newRay(pos, reflectDir);
                 newRay.refractiveIndex = ray.refractiveIndex;
-                newRay.itterations = ray.itterations + 1;
+                newRay.iterations = ray.iterations + 1;
                 reflectColor = calculateColor(newRay, rng);
             }
 
@@ -71,7 +78,7 @@ Vec3 Scene::calculateColor(Ray &ray, std::mt19937 &rng) {
 
                 Ray newRay(pos, refractDir);
                 newRay.refractiveIndex = refractiveIndex;
-                newRay.itterations = ray.itterations;
+                newRay.iterations = ray.iterations;
                 newRay.inside = insideGeometry;
                 Vec3 refractColor = calculateColor(newRay, rng);
 

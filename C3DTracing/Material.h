@@ -46,7 +46,7 @@ public:
     Vec3 diffusion;
     Vec3 emission;
     double specularDamp = 0;
-    double reflectivity = 0;
+    double reflectivity = 1;
     bool reflective = false;
     double refractiveIndex = -1;
 };

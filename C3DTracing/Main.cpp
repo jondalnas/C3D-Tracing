@@ -27,7 +27,7 @@ const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
 Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
-const auto numSamples = 100;
+const auto numSamples = 20000;
 std::chrono::time_point startTime = std::chrono::steady_clock::now();
 
 int main() {
@@ -40,8 +40,12 @@ int main() {
     scene.add(std::make_shared<Plane>(Vec3(0, -3, 0), Vec3(0, 1, 0), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_shared<Plane>(Vec3(0, 0, 20), Vec3(0, 0, -1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_shared<Plane>(Vec3(0, 0, -1), Vec3(0, 0, 1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
-    scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(1, 1, 1), 100, 15)));
-    scene.add(std::make_shared<Sphere>(Vec3(0, 1.75, 6), 1.25, Material::refractiveMaterial(1.333)));// + Material::reflectiveMaterial()));//Material(Vec3(1, 1, 1), 100, 10)));
+    scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(1, 1, 1), 10, 1.2)));
+    scene.add(std::make_shared<Sphere>(Vec3(0, 1.75, 6), 1.25, Material::refractiveMaterial(1.333) + Material::reflectiveMaterial()));//Material(Vec3(1, 1, 1), 100, 10)));
+
+    /*scene.add(std::make_shared<Disk>(Vec3(3, 0, 7), Vec3(-1, 0, 0), 1.0, Material(Vec3(0.8, 0.2, 0.8), Vec3(1, 1, 1))));
+    scene.add(std::make_shared<Sphere>(Vec3(0, 0, 7), 1, Material::refractiveMaterial(1.333)));
+    scene.add(std::make_shared<Plane>(Vec3(-2.01515152, 0, 0), Vec3(1, 0, 0), Material::materialWithDiffusion(Vec3(1, 1, 1))));*/
 
     startTime = std::chrono::steady_clock::now();
 
@@ -109,7 +113,7 @@ int main() {
 
     std::vector<std::thread> threads;
     threads.reserve(std::thread::hardware_concurrency());
-    for (auto i = 0u; i < 1/*std::thread::hardware_concurrency()*/; i++) {
+    for (auto i = 0u; i < std::thread::hardware_concurrency(); i++) {
         threads.emplace_back([&] {
             std::pair<Pixel, bool> pixel;
             while ((pixel = pixelArray.next()).second) {
@@ -119,8 +123,11 @@ int main() {
                 auto rayDir = (xCam * xx + yCam * yy + camDir).normalized();
                 Ray ray(camPos, rayDir);
 
+                std::pair<Geometry::Hit, bool> closest = scene.findGeometry(ray);
+
                 for (int i = 0; i < numSamples; i++) {
-                    Vec3 color = scene.calculateColor(ray, rng);
+                    Vec3 color = scene.calculateColor(ray, rng, closest);
+
                     _output[pixel.first.x + pixel.first.y * WIDTH] += color;
                 }
             }

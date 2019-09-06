@@ -3,11 +3,11 @@
 #include <cmath>
 #include <iostream>
 
-std::pair<Geometry::Hit, bool> Sphere::intersects(Ray *ray) {
-	Vec3 toSphere = pos - ray->pos;
+std::pair<Geometry::Hit, bool> Sphere::intersects(Ray ray) {
+	Vec3 toSphere = pos - ray.pos;
 	double distanceSqrt = toSphere.lengthSqrt();
 
-	double centerHit = ray->dir.normalized().dot(toSphere);
+	double centerHit = ray.dir.normalized().dot(toSphere);
 	if (centerHit < 0) return{};
 
 	double closestDistanceSqrt = distanceSqrt - centerHit * centerHit;
@@ -24,10 +24,7 @@ std::pair<Geometry::Hit, bool> Sphere::intersects(Ray *ray) {
 	    if (plusT < 1e-4) return {};
 	}
 
-	Vec3 hitPos = ray->dir * minusT + ray->pos;
-
-	if (!((hitPos - pos).normalized() == (hitPos - pos).normalized()))
-	    std::cout << (hitPos - pos).normalized() << std::endl;
+	Vec3 hitPos = ray.dir * minusT + ray.pos;
 
     return { Hit{ minusT, hitPos, (hitPos - pos).normalized(), mat, this }, true };
 }
