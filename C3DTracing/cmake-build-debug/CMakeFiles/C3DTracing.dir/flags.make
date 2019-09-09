@@ -6,5 +6,5 @@ CXX_FLAGS = -pthread -g   -Wall -Werror -Wextra -march=native -g -std=gnu++17
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/include/SDL2 
 

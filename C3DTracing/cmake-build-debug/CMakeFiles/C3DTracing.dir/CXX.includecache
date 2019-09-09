@@ -53,6 +53,8 @@ mutex
 -
 functional
 -
+SDL2/SDL.h
+-
 
 /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h
 Vec3.h

@@ -5,7 +5,7 @@
 		<Option title="C3DTracing"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\..\..\opt\clion\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug"/>
@@ -34,12 +34,13 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
@@ -56,12 +57,13 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/../../../../include/c++/8.2.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include"/>
+					<Add directory="/usr/include/SDL2"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/8.2.1/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
@@ -138,6 +140,30 @@
 		</Unit>
 		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/CheckIncludeFile.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/CheckLibraryExists.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/CheckSymbolExists.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindPackageMessage.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindPkgConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindSDL2.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
+		</Unit>
+		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindThreads.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

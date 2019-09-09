@@ -13,9 +13,10 @@
 #include <thread>
 #include <mutex>
 #include <functional>
+#include <SDL2/SDL.h>
 
 namespace {
-    int rgbToInt(double c) { return lround(pow(std::clamp(c, 0.0, 1.0), 1.0 / 2.2) * 255); }
+    Uint8 rgbToInt(double c) { return lround(pow(std::clamp(c, 0.0, 1.0), 1.0 / 2.2) * 255); }
 }
 
 Vec3 camPos(0, 0, 0);
@@ -27,7 +28,7 @@ const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
 Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
-const auto numSamples = 20000;
+const auto numSamples = 7500;
 std::chrono::time_point startTime = std::chrono::steady_clock::now();
 
 int main() {
@@ -72,6 +73,7 @@ int main() {
 
         std::vector<Pixel> pixels;
         std::vector<Pixel> closed;
+        std::vector<Pixel> canRender;
         Pixels(int width, int height) : widht(width), height(height) {
             pixels.reserve(width * height);
             closed.reserve(width * height);
@@ -112,7 +114,7 @@ int main() {
     std::mt19937 rng(0);
 
     std::vector<std::thread> threads;
-    threads.reserve(std::thread::hardware_concurrency());
+    threads.reserve(std::thread::hardware_concurrency() + 1);
     for (auto i = 0u; i < std::thread::hardware_concurrency(); i++) {
         threads.emplace_back([&] {
             std::pair<Pixel, bool> pixel;
@@ -130,9 +132,41 @@ int main() {
 
                     _output[pixel.first.x + pixel.first.y * WIDTH] += color;
                 }
+
+                pixelArray.canRender.emplace_back(pixel.first);
             }
         });
     }
+
+    threads.emplace_back([&]{
+        SDL_Window *window;
+        SDL_Renderer *renderer;
+        SDL_Init(SDL_INIT_VIDEO);
+
+        SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, SDL_WINDOW_OPENGL, &window, &renderer);
+        SDL_SetWindowTitle(window, "C3D Tracer");
+
+        while (pixelArray.pixels.size() != 0) {
+            Pixel currentPixel;
+            if (pixelArray.canRender.empty()) continue;
+
+            currentPixel = pixelArray.canRender.front();
+
+            auto c = _output[currentPixel.x + currentPixel.y * WIDTH];
+
+            c *= 1.0 / numSamples;
+
+            SDL_SetRenderDrawColor(renderer, rgbToInt(c.x), rgbToInt(c.y), rgbToInt(c.z), 255);
+
+            SDL_RenderDrawPoint(renderer, currentPixel.x, currentPixel.y);
+            SDL_RenderPresent(renderer);
+
+            pixelArray.canRender.erase(pixelArray.canRender.begin());
+        }
+
+        SDL_DestroyWindow(window);
+        SDL_Quit();
+    });
 
     for (auto &thread : threads) {
         thread.join();
@@ -143,6 +177,7 @@ int main() {
 
     for (auto c : _output) {
         c *= 1.0 / numSamples;
+
         fprintf(f, "%i %i %i ", rgbToInt(c.x), rgbToInt(c.y), rgbToInt(c.z));
     }
 
