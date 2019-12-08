@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Vec3.h"
+#include "Material.h"
 #include <memory>
 #include <random>
 
@@ -57,4 +58,55 @@ public:
 
         return (normal * z + tangent * x + bitangent * y).normalize();
     }
+
+	static double BRDF(Vec3 view, Vec3 reflecRay, Vec3 normal, Material *mat, double refractiveIndexOfRay) {
+		auto halfVector = view + reflecRay;
+		halfVector.normalize();
+
+		auto viewTheta = view.dot(normal);
+		auto reflectTheta = reflecRay.dot(normal);
+		auto halfTheta = halfVector.dot(normal);
+		auto viewHalfTheta = view.dot(halfVector);
+
+		return distributionBRDF(halfTheta, mat->roughness) * fresnelBRDF(viewHalfTheta, refractiveIndexOfRay, mat->refractiveIndex) * geometricBRDF(halfTheta, viewTheta, reflectTheta, viewHalfTheta) / (M_PI * viewTheta * reflectTheta);
+	}
+
+	static double geometricBRDF(double halfTheta, double viewTheta, double reflectTheta, double viewHalfTheta) {
+		//G = min(1,(2*(H N)*(V N))/(V H),(2*(H N)*(L N))/(V H))
+		//Let a be a=(2*(H N)/(V H)) then G = min(1,a*(V N),a*(L N))
+		//Thus we only need to check if (V N) if greater than (L N)
+		auto a = (2 * halfTheta) / viewHalfTheta;
+		
+		auto G = a;
+		if (viewTheta > reflectTheta)
+			G *= reflectTheta;
+		else
+			G *= viewTheta;
+
+		return std::min(1.0, G);
+	}
+
+	static double distributionBRDF(double halfTheta, double roughness) {
+		//Using Beckmann distribution
+		//k_spec=exp(-tan^2(alpha)/m^2)/(pi*m^2*cos^4(alpha)), alpha=arccos(N H)
+		//tan^2(alpha)/m^2 = (1-cos^2(alpha))/(cos^2(alpha)*m^2)
+		//k_spec=exp(-(1-cos^2(alpha))/(cos^2(alpha)*m^2))/(pi*m^2*cos^4(alpha)), alpha=arccos(N H)
+		//cos^2(arccos(N H)) = (N H)^2, -1<=x<=1
+		//k_spec=exp(-(1-(N H)^2)/((N H)^2*m^2))/(pi*m^2*(N H)^4)
+
+		auto halfTheta2 = halfTheta * halfTheta;
+		auto roughness2 = roughness * roughness;
+
+		return std::exp(-(1-halfTheta2)/(halfTheta2 * roughness2)) / (M_PI * roughness2 * halfTheta2 * halfTheta2);
+	}
+
+	static double fresnelBRDF(double viewHalfTheta, double refractiveIndexOfRay, double refractiveIndexOfObject) {
+		//Using Slicks's approximation
+		//R(theta)=R_0+(1-R_0)*(1-cos(theta))^5
+		//R_0=((n_1-n_2)/(n_1+n_2))
+		//theta is (V H) because we are using microfacet moddeling
+
+		auto r0 = (refractiveIndexOfRay - refractiveIndexOfObject) / (refractiveIndexOfRay + refractiveIndexOfObject);
+		return r0 + (1 - r0) * std::pow(1 - viewHalfTheta, 5);
+	}
 };
