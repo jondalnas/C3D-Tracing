@@ -6,35 +6,35 @@
 
 #IncludeRegexTransform: 
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Disk.h
 Plane.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Plane.h
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Geometry.h
 Vec3.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.h
 Ray.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Ray.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Ray.h
 Material.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Material.h
 utility
 -
 memory
 -
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Main.cpp
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Main.cpp
 pch.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/pch.h
 Vec3.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.h
 Sphere.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Sphere.h
 Scene.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Scene.h
 Plane.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Plane.h
 Disk.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Disk.h
 iostream
 -
 cmath
@@ -56,29 +56,29 @@ functional
 SDL2/SDL.h
 -
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Material.h
 Vec3.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.h
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Plane.h
 Geometry.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Geometry.h
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Ray.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Ray.h
 Vec3.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.h
 Geometry.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Geometry.h
 memory
 -
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Scene.h
 Vec3.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.h
 Geometry.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Geometry.h
 Ray.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Ray.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Ray.h
 vector
 -
 memory
@@ -86,15 +86,15 @@ memory
 random
 -
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Sphere.h
 Geometry.h
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Geometry.h
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.h
 cmath
 -
 iostream
 -
 
-/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.h
+C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/pch.h
 

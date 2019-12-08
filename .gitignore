@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+# CMake
+CMakeLists.txt
+
+# SDL
+SDL2.dll
+
+# Visual Studio
+.vs/C3DTracing/v16/Browse.VC.opendb

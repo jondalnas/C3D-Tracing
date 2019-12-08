@@ -1,11 +1,8 @@
 cmake_minimum_required(VERSION 3.6)
 project(C3DTracing)
 
-set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_FLAGS -pthread)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "/opt/clion/bin/cmake/linux/share/cmake-3.14/Modules")
-
-add_compile_options(-Wall -Werror -Wextra -march=native -g)
+set(SDL2_PATH "C:\\Program Files (x86)\\SDL2\\i686-w64-mingw32")
+set(SDL2_LIBRARY "C:\\Program Files (x86)\\SDL2\\i686-w64-mingw32\\lib")
 
 find_package(SDL2 REQUIRED)
 

@@ -1,4 +1,5 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" "/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing"
+"C:\Program Files\JetBrains\CLion 2019.3.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - NMake Makefiles" C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing
+-- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE) 
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug
+-- Build files have been written to: C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug

@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Disk.h"
 
 std::pair<Geometry::Hit, bool> Disk::intersects(Ray ray) {

@@ -4,166 +4,148 @@
 	<Project>
 		<Option title="C3DTracing"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\opt\;CMake Files\..\..\..\..\..\..\..\opt\clion\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\;CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\;"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="C3DTracing">
-				<Option output="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/C3DTracing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug"/>
+				<Option output="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug/C3DTracing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 C3DTracing"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 C3DTracing"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="C3DTracing/fast">
-				<Option output="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug/C3DTracing" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug"/>
+				<Option output="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug/C3DTracing.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/SDL2"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/include-fixed"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\ATLMFC\include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\ucrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 C3DTracing/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 C3DTracing/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/cmake-build-debug"/>
+				<Option working_dir="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/home/jonas/Documents/Programming/C++/C3D\ Tracing/C3DTracing/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Users\Jonas\Documents\Programming\C++\C3DTracing\C3DTracing\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Disk.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Disk.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Disk.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Geometry.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Geometry.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Main.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/InvertedDisk.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Material.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/InvertedDisk.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Math.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Main.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Math.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Material.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Math.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Plane.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Math.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Ray.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Plane.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Plane.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Scene.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Ray.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Scene.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Sphere.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Scene.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Sphere.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/Vec3.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Sphere.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.cpp">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.cpp">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/pch.h">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/Vec3.h">
 			<Option target="C3DTracing"/>
 		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/CMakeLists.txt">
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/pch.cpp">
+			<Option target="C3DTracing"/>
+		</Unit>
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/pch.h">
+			<Option target="C3DTracing"/>
+		</Unit>
+		<Unit filename="C:/Users/Jonas/Documents/Programming/C++/C3DTracing/C3DTracing/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/CheckIncludeFile.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/CheckLibraryExists.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/CheckSymbolExists.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindPackageHandleStandardArgs.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindPackageMessage.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindPkgConfig.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindSDL2.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
-		</Unit>
-		<Unit filename="/home/jonas/Documents/Programming/C++/C3D Tracing/C3DTracing/../../../../../../../opt/clion/bin/cmake/linux/share/cmake-3.14/Modules/FindThreads.cmake">
-			<Option virtualFolder="CMake Files\..\..\..\..\..\..\..\opt\clion\bin\cmake\linux\share\cmake-3.14\Modules\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

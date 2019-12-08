@@ -1,3 +1,4 @@
+#include "pch.h"
 #include "Plane.h"
 
 std::pair<Geometry::Hit, bool> Plane::intersects(Ray ray) {

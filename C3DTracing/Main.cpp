@@ -1,3 +1,4 @@
+#define USING_VISUAL_STUDIO true
 #include "pch.h"
 #include "Vec3.h"
 #include "Sphere.h"
@@ -13,10 +14,11 @@
 #include <thread>
 #include <mutex>
 #include <functional>
-#include <SDL2/SDL.h>
+#include <SDL.h>
+#include <Windows.h>
 
 namespace {
-    Uint8 rgbToInt(double c) { return lround(pow(std::clamp(c, 0.0, 1.0), 1.0 / 2.2) * 255); }
+    uint8_t rgbToInt(double c) { return lround(pow(std::clamp(c, 0.0, 1.0), 1.0 / 2.2) * 255); }
 }
 
 Vec3 camPos(0, 0, 0);
@@ -31,7 +33,13 @@ Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
 const auto numSamples = 7500;
 std::chrono::time_point startTime = std::chrono::steady_clock::now();
 
-int main() {
+int main(int argc, char* argv[]) {
+	if (USING_VISUAL_STUDIO) {
+		AllocConsole();
+		freopen("CONOUT$", "w", stdout);
+		freopen("CONOUT$", "w", stderr);
+	}
+
     Scene scene;
 
     scene.add(std::make_shared<Disk>(Vec3(0, -3, 10), Vec3(0, 1, 0), 1.0, Material(Vec3(0.8, 0.2, 0.8), Vec3(1, 1, 1))));
@@ -63,7 +71,7 @@ int main() {
         Pixel(int x, int y) : x(x), y(y) {
         }
 
-        Pixel() {}
+        Pixel() : x(0), y(0) {}
     };
 
     struct Pixels {
@@ -146,7 +154,17 @@ int main() {
         SDL_CreateWindowAndRenderer(WIDTH, HEIGHT, SDL_WINDOW_OPENGL, &window, &renderer);
         SDL_SetWindowTitle(window, "C3D Tracer");
 
+		SDL_Event evt;
+
         while (pixelArray.pixels.size() != 0) {
+			SDL_PollEvent(&evt);
+
+			if (evt.type == SDL_QUIT) {
+				for (auto &thread : threads) {
+					thread.~thread();
+				}
+			}
+
             Pixel currentPixel;
             if (pixelArray.canRender.empty()) continue;
 

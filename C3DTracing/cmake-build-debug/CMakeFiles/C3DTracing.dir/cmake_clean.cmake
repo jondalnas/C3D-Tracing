@@ -1,14 +1,17 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/C3DTracing.dir/Disk.cpp.o"
-  "CMakeFiles/C3DTracing.dir/Main.cpp.o"
-  "CMakeFiles/C3DTracing.dir/Math.cpp.o"
-  "CMakeFiles/C3DTracing.dir/Plane.cpp.o"
-  "CMakeFiles/C3DTracing.dir/Scene.cpp.o"
-  "CMakeFiles/C3DTracing.dir/Sphere.cpp.o"
-  "CMakeFiles/C3DTracing.dir/Vec3.cpp.o"
-  "CMakeFiles/C3DTracing.dir/pch.cpp.o"
+  "C3DTracing.exe"
+  "C3DTracing.exe.manifest"
+  "C3DTracing.lib"
   "C3DTracing.pdb"
-  "C3DTracing"
+  "CMakeFiles/C3DTracing.dir/Disk.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/InvertedDisk.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/Main.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/Math.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/Plane.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/Scene.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/Sphere.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/Vec3.cpp.obj"
+  "CMakeFiles/C3DTracing.dir/pch.cpp.obj"
 )
 
 # Per-language clean rules from dependency scanning.

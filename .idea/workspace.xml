@@ -5,25 +5,54 @@
       <config projectName="C3DTracing" targetName="C3DTracing" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec700d2f-8a41-40a7-a64a-c4dc1fbf303e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/C3DTracing/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C3DTracing/Material.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C3DTracing/Scene.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/C3DTracing/Scene.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C3DTracing/Geometry.h" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/Geometry.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/C3DTracing/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/Main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C3DTracing/Sphere.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/Sphere.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C3DTracing/Sphere.h" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/Sphere.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/C3DTracing/image.ppm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/C3DTracing.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/C3DTracing.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/3.14.4/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/3.14.4/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/3.14.4/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/3.14.4/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/3.14.4/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/3.14.4/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/3.14.4/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/C3DTracing.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/CMakeError.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.log" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/C3DTracing/x64/Debug/C3DTracing.tlog/CL.write.1.tlog" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/C3DTracing/cmake-build-debug/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,112 +60,8 @@
   </component>
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
-    <option name="clangWarnings" value="-Wno-unused-variable,-Werror=implicit-function-declaration,-Wshadow,-Wno-shadow-field-in-constructor-modified,-Wno-shadow-ivar" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Vec3.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Ray.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Geometry.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-              <folding>
-                <element signature="e#13#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Scene.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="12" selection-start-column="12" selection-end-column="12" />
-              <folding>
-                <element signature="e#14#31#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Scene.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Material.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Sphere.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/C3DTracing/Sphere.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
-              <folding>
-                <element signature="e#0#16#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -146,21 +71,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/C3DTracing/Ray.h" />
-        <option value="$PROJECT_DIR$/C3DTracing/Scene.h" />
-        <option value="$PROJECT_DIR$/C3DTracing/Sphere.h" />
-        <option value="$PROJECT_DIR$/C3DTracing/Sphere.cpp" />
-        <option value="$PROJECT_DIR$/C3DTracing/Geometry.h" />
-        <option value="$PROJECT_DIR$/C3DTracing/Material.h" />
-        <option value="$PROJECT_DIR$/C3DTracing/Scene.cpp" />
-        <option value="$PROJECT_DIR$/C3DTracing/Main.cpp" />
-        <option value="$PROJECT_DIR$/C3DTracing/CMakeLists.txt" />
-      </list>
-    </option>
   </component>
   <component name="ProjectConfigurationFiles">
     <option name="files">
@@ -172,34 +82,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="960" />
-    <option name="width" value="960" />
-    <option name="height" value="1040" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="C3DTracing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="C3D Tracing" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="C3DTracing" type="b2602c69:ProjectViewProjectNode" />
-              <item name="C3D Tracing" type="462c0819:PsiDirectoryNode" />
-              <item name="C3DTracing" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+  <component name="ProjectId" id="1UfymOFuCeDmO5l1TBjQ21kcWzf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -212,24 +99,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="CPPToolchains" />
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
-    <configuration name="C3DTracing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C3DTracing" TARGET_NAME="C3DTracing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="C3DTracing" RUN_TARGET_NAME="C3DTracing">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="js.build_tools.grunt">
       <node-interpreter value="project" />
       <envs />
@@ -244,6 +114,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="C3DTracing" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="C3DTracing" TARGET_NAME="C3DTracing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="C3DTracing" RUN_TARGET_NAME="C3DTracing">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -260,121 +147,21 @@
       <workItem from="1559424301535" duration="492000" />
       <workItem from="1559471373631" duration="10441000" />
       <workItem from="1559834863579" duration="1718000" />
+      <workItem from="1575762116673" duration="1897000" />
     </task>
     <servers />
-  </component>
-  <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13937000" />
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="0" y="-1" width="1920" height="1041" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26254" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32861805" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3278867" />
-      <window_info anchor="bottom" id="CMake" order="12" weight="0.3278867" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/C3DTracing/image.ppm" />
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Geometry.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#13#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Scene.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
-          <folding>
-            <element signature="e#14#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Sphere.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="2" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Sphere.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="67" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Ray.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Vec3.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Scene.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Material.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/C3DTracing/Main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="37" selection-start-line="21" selection-start-column="37" selection-end-line="21" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+  <component name="WindowStateProjectService">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1575762198009">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1280.-128.1280.984/1920.-128.1280.984@0.0.1920.1040" timestamp="1575762198009" />
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1575762151142">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="661" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1280.-128.1280.984/1920.-128.1280.984@0.0.1920.1040" timestamp="1575762151142" />
   </component>
 </project>
