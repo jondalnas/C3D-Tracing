@@ -1,4 +1,8 @@
 #define USING_VISUAL_STUDIO true
+#if USING_VISUAL_STUDIO
+#include <Windows.h>
+#endif
+
 #include "pch.h"
 #include "Vec3.h"
 #include "Sphere.h"
@@ -15,11 +19,12 @@
 #include <mutex>
 #include <functional>
 #include <SDL.h>
-#include <Windows.h>
 
 namespace {
     uint8_t rgbToInt(double c) { return lround(pow(std::clamp(c, 0.0, 1.0), 1.0 / 2.2) * 255); }
 }
+
+constexpr unsigned int WINDOW_SLEEP_TIME = 100;
 
 Vec3 camPos(0, 0, 0);
 Vec3 camDir(0, 0, 1);
@@ -157,6 +162,8 @@ int main(int argc, char* argv[]) {
 		SDL_Event evt;
 
         while (pixelArray.pixels.size() != 0) {
+			SDL_Delay(WINDOW_SLEEP_TIME);
+
 			SDL_PollEvent(&evt);
 
 			if (evt.type == SDL_QUIT) {
@@ -190,7 +197,7 @@ int main(int argc, char* argv[]) {
         thread.join();
     }
 
-    FILE *f = fopen("image.ppm", "w");
+    FILE *f = fopen("BRDF.ppm", "w");
     fprintf(f, "P3\n%d %d\n%d\n", WIDTH, HEIGHT, 255);
 
     for (auto c : _output) {

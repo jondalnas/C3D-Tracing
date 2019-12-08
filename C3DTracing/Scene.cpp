@@ -21,7 +21,7 @@ Vec3 Scene::calculateColor(Ray &ray, std::mt19937 &rng, std::pair<Geometry::Hit,
 
         Vec3 normal(closest->normal);
         Vec3 pos(closest->pos);
-        if (!closest->mat.reflective && closest->mat.refractiveIndex == -1) {
+        if (!closest->mat.reflective && !closest->mat.refractive) {
             Vec3 dir = Math::hemisphere(normal, rng);
 
             double cosTheta = dir.dot(normal);
@@ -44,7 +44,9 @@ Vec3 Scene::calculateColor(Ray &ray, std::mt19937 &rng, std::pair<Geometry::Hit,
             newRay.iterations = ray.iterations + 1;
             Vec3 newColor = calculateColor(newRay, rng);
 
-            return newColor * closest->mat.diffusion * cosTheta * M_1_PI * loss * (1 / pdf);
+			if (newColor.isZero()) return newColor;
+
+            return newColor * closest->mat.diffusion * Math::BRDF(ray.dir, dir, normal, &closest->mat, ray.refractiveIndex) * cosTheta * M_1_PI * loss * (1 / pdf);
         } else {
             Vec3 reflectColor;
             if (closest->mat.reflective) {

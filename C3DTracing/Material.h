@@ -35,8 +35,10 @@ public:
         result.emission += mat.emission;
         result.specularDamp += mat.specularDamp;
         result.reflectivity += mat.reflectivity;
-        if (mat.reflective)
-            result.reflective = mat.reflective;
+		if (mat.reflective)
+			result.reflective = mat.reflective;
+		if (mat.refractive)
+			result.refractive = mat.refractive;
         if (mat.refractiveIndex != -1 && result.refractiveIndex != -1) result.refractiveIndex += mat.refractiveIndex;
         else if (result.refractiveIndex == -1 && result.refractiveIndex != -1) result.refractiveIndex = mat.refractiveIndex;
 
@@ -48,5 +50,7 @@ public:
     double specularDamp = 0;
     double reflectivity = 1;
     bool reflective = false;
-    double refractiveIndex = -1;
+	double refractiveIndex = 1;
+	bool refractive = false;
+	double roughness = 1;
 };
