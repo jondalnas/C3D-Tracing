@@ -86,6 +86,8 @@ public:
 		return std::min(1.0, G);
 	}
 
+	//This one is wrong, because it results in k_spec and not D, which is the one we need to compute Cook-Torrance BRDF
+	//This can be used on its own, so I'm still keeping it
 	static double distributionBRDF(double halfTheta, double roughness) {
 		//Using Beckmann distribution
 		//k_spec=exp(-tan^2(alpha)/m^2)/(pi*m^2*cos^4(alpha)), alpha=arccos(N H)

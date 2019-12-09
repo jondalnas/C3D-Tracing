@@ -1,5 +1,10 @@
-﻿  Main.cpp
-c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(20): warning C4244: 'return': conversion from 'long' to 'uint8_t', possible loss of data
+﻿  Disk.cpp
+  InvertedDisk.cpp
+  Main.cpp
+c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(1): warning C4603: 'USING_VISUAL_STUDIO': macro is not defined or definition is different after precompiled header use
+  c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(1): note: Add macro to precompiled header instead of defining here
+  c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(6): note: use of precompiled header
+c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(24): warning C4244: 'return': conversion from 'long' to 'uint8_t', possible loss of data
 c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\memory(1801): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
           with
           [
@@ -15,5 +20,10 @@ c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.1
           [
               _Ty=Disk
           ]
-  c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(46): note: see reference to function template instantiation 'std::shared_ptr<Disk> std::make_shared<Disk,Vec3,Vec3,double,Material>(Vec3 &&,Vec3 &&,double &&,Material &&)' being compiled
+  c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(52): note: see reference to function template instantiation 'std::shared_ptr<Disk> std::make_shared<Disk,Vec3,Vec3,double,Material>(Vec3 &&,Vec3 &&,double &&,Material &&)' being compiled
+  Math.cpp
+  Plane.cpp
+  Scene.cpp
+  Sphere.cpp
+  Generating Code...
   C3DTracing.vcxproj -> C:\Users\Jonas\Documents\Programming\C++\C3DTracing\x64\Debug\C3DTracing.exe

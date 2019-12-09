@@ -29,21 +29,23 @@ constexpr unsigned int WINDOW_SLEEP_TIME = 100;
 Vec3 camPos(0, 0, 0);
 Vec3 camDir(0, 0, 1);
 
-const int WIDTH = 640, HEIGHT = 480;
+//const int WIDTH = 640, HEIGHT = 480;
+const int WIDTH = 128, HEIGHT = 136;
 const auto aspectRatio = static_cast<double>(WIDTH) / HEIGHT;
 const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
 Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
-const auto numSamples = 7500;
+//const auto numSamples = 7500;
+const auto numSamples = 750;
 std::chrono::time_point startTime = std::chrono::steady_clock::now();
 
 int main(int argc, char* argv[]) {
-	if (USING_VISUAL_STUDIO) {
+	#if USING_VISUAL_STUDIO
 		AllocConsole();
 		freopen("CONOUT$", "w", stdout);
 		freopen("CONOUT$", "w", stderr);
-	}
+	#endif
 
     Scene scene;
 
@@ -54,8 +56,8 @@ int main(int argc, char* argv[]) {
     scene.add(std::make_shared<Plane>(Vec3(0, -3, 0), Vec3(0, 1, 0), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_shared<Plane>(Vec3(0, 0, 20), Vec3(0, 0, -1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_shared<Plane>(Vec3(0, 0, -1), Vec3(0, 0, 1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
-    scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(1, 1, 1), 10, 1.2)));
-    scene.add(std::make_shared<Sphere>(Vec3(0, 1.75, 6), 1.25, Material::refractiveMaterial(1.333) + Material::reflectiveMaterial()));//Material(Vec3(1, 1, 1), 100, 10)));
+    scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(1, 1, 1), 0.13, 0.1)));
+    //scene.add(std::make_shared<Sphere>(Vec3(0, 1.75, 6), 1.25, Material::refractiveMaterial(1.333) + Material::reflectiveMaterial()));//Material(Vec3(1, 1, 1), 100, 10)));
 
     /*scene.add(std::make_shared<Disk>(Vec3(3, 0, 7), Vec3(-1, 0, 0), 1.0, Material(Vec3(0.8, 0.2, 0.8), Vec3(1, 1, 1))));
     scene.add(std::make_shared<Sphere>(Vec3(0, 0, 7), 1, Material::refractiveMaterial(1.333)));
@@ -71,9 +73,9 @@ int main(int argc, char* argv[]) {
 
     struct Pixel {
     public:
-        int x, y;
+        unsigned int x, y;
 
-        Pixel(int x, int y) : x(x), y(y) {
+        Pixel(unsigned int x, unsigned int y) : x(x), y(y) {
         }
 
         Pixel() : x(0), y(0) {}
@@ -132,7 +134,7 @@ int main(int argc, char* argv[]) {
         threads.emplace_back([&] {
             std::pair<Pixel, bool> pixel;
             while ((pixel = pixelArray.next()).second) {
-                auto xx = (static_cast<double>(pixel.first.x) / WIDTH - 0.5) * 2;
+				auto xx = (static_cast<double>(pixel.first.x) / WIDTH - 0.5) * 2;
                 auto yy = (static_cast<double>(pixel.first.y) / HEIGHT - 0.5) * 2;
 
                 auto rayDir = (xCam * xx + yCam * yy + camDir).normalized();
@@ -151,7 +153,7 @@ int main(int argc, char* argv[]) {
         });
     }
 
-    threads.emplace_back([&]{
+    /*threads.emplace_back([&]{
         SDL_Window *window;
         SDL_Renderer *renderer;
         SDL_Init(SDL_INIT_VIDEO);
@@ -162,7 +164,7 @@ int main(int argc, char* argv[]) {
 		SDL_Event evt;
 
         while (pixelArray.pixels.size() != 0) {
-			SDL_Delay(WINDOW_SLEEP_TIME);
+			//SDL_Delay(WINDOW_SLEEP_TIME);
 
 			SDL_PollEvent(&evt);
 
@@ -172,10 +174,9 @@ int main(int argc, char* argv[]) {
 				}
 			}
 
-            Pixel currentPixel;
             if (pixelArray.canRender.empty()) continue;
 
-            currentPixel = pixelArray.canRender.front();
+			Pixel currentPixel = pixelArray.canRender.front();
 
             auto c = _output[currentPixel.x + currentPixel.y * WIDTH];
 
@@ -191,7 +192,7 @@ int main(int argc, char* argv[]) {
 
         SDL_DestroyWindow(window);
         SDL_Quit();
-    });
+    });*/
 
     for (auto &thread : threads) {
         thread.join();

@@ -44,9 +44,7 @@ Vec3 Scene::calculateColor(Ray &ray, std::mt19937 &rng, std::pair<Geometry::Hit,
             newRay.iterations = ray.iterations + 1;
             Vec3 newColor = calculateColor(newRay, rng);
 
-			if (newColor.isZero()) return newColor;
-
-            return newColor * closest->mat.diffusion * Math::BRDF(ray.dir, dir, normal, &closest->mat, ray.refractiveIndex) * cosTheta * M_1_PI * loss * (1 / pdf);
+            return newColor * closest->mat.diffusion * Math::BRDF(ray.dir*-1, dir, normal, &closest->mat, ray.refractiveIndex) * cosTheta * M_1_PI * loss * (1 / pdf);
         } else {
             Vec3 reflectColor;
             if (closest->mat.reflective) {

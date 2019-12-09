@@ -5,7 +5,7 @@
 class Material {
 public:
     Material(Vec3 diffusion, Vec3 emission) : diffusion(diffusion), emission(emission) {}
-    Material(Vec3 diffusion, double specularDamp, double reflectivity) : diffusion(diffusion), specularDamp(specularDamp), reflectivity(reflectivity) {}
+    Material(Vec3 diffusion, double refractiveIndex, double roughness) : diffusion(diffusion), refractiveIndex(refractiveIndex), roughness(roughness) {}
     Material() : diffusion(), emission() {}
 
     static Material materialWithDiffusion(Vec3 diffusion) {
@@ -33,8 +33,6 @@ public:
 
         result.diffusion += mat.diffusion;
         result.emission += mat.emission;
-        result.specularDamp += mat.specularDamp;
-        result.reflectivity += mat.reflectivity;
 		if (mat.reflective)
 			result.reflective = mat.reflective;
 		if (mat.refractive)
@@ -47,10 +45,8 @@ public:
 
     Vec3 diffusion;
     Vec3 emission;
-    double specularDamp = 0;
-    double reflectivity = 1;
     bool reflective = false;
-	double refractiveIndex = 1;
+	double refractiveIndex = 0;
 	bool refractive = false;
 	double roughness = 1;
 };
