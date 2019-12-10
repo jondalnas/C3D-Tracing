@@ -59,16 +59,18 @@ public:
         return (normal * z + tangent * x + bitangent * y).normalize();
     }
 
-	static double BRDF(Vec3 view, Vec3 reflecRay, Vec3 normal, Material *mat, double refractiveIndexOfRay) {
-		auto halfVector = view + reflecRay;
+	static Vec3 BRDF(Vec3 view, Vec3 reflectRay, Vec3 normal, Material *mat, double refractiveIndexOfRay, Vec3 diffues, Vec3 reflectColor) {
+		auto halfVector = view + reflectRay;
 		halfVector.normalize();
 
 		auto viewTheta = view.dot(normal);
-		auto reflectTheta = reflecRay.dot(normal);
+		auto reflectTheta = reflectRay.dot(normal);
 		auto halfTheta = halfVector.dot(normal);
 		auto viewHalfTheta = view.dot(halfVector);
 
-		return distributionBRDF(halfTheta, mat->roughness) * fresnelBRDF(viewHalfTheta, refractiveIndexOfRay, mat->refractiveIndex) * geometricBRDF(halfTheta, viewTheta, reflectTheta, viewHalfTheta) / (M_PI * viewTheta * reflectTheta);
+		auto fr = fresnelBRDF(viewHalfTheta, refractiveIndexOfRay, mat->refractiveIndex);
+
+		return reflectColor * (diffues * (1 - fr) + Vec3(1, 1, 1) * (fr * distributionBRDF(halfTheta, mat->roughness) * geometricBRDF(halfTheta, viewTheta, reflectTheta, viewHalfTheta) / (4 * viewTheta * reflectTheta)));
 	}
 
 	static double geometricBRDF(double halfTheta, double viewTheta, double reflectTheta, double viewHalfTheta) {
@@ -100,7 +102,7 @@ public:
 		auto roughness2 = roughness * roughness;
 
 		return std::exp((halfTheta2 - 1)/(halfTheta2 * roughness2)) /
-			   (roughness2 * halfTheta2 * halfTheta2);
+			   (M_PI * roughness2 * halfTheta2 * halfTheta2);
 	}
 
 	static double fresnelBRDF(double viewHalfTheta, double refractiveIndexOfRay, double refractiveIndexOfObject) {

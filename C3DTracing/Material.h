@@ -46,7 +46,7 @@ public:
     Vec3 diffusion;
     Vec3 emission;
     bool reflective = false;
-	double refractiveIndex = 0;
+	double refractiveIndex = 1;
 	bool refractive = false;
 	double roughness = 1;
 };
