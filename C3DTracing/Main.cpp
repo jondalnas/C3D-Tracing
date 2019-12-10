@@ -29,15 +29,15 @@ constexpr unsigned int WINDOW_SLEEP_TIME = 100;
 Vec3 camPos(0, 0, 0);
 Vec3 camDir(0, 0, 1);
 
-//const int WIDTH = 640, HEIGHT = 480;
-const int WIDTH = 128, HEIGHT = 136;
+const int WIDTH = 640, HEIGHT = 480;
+//const int WIDTH = 128, HEIGHT = 136;
 const auto aspectRatio = static_cast<double>(WIDTH) / HEIGHT;
 const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
 Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
-//const auto numSamples = 7500;
-const auto numSamples = 750;
+//const auto numSamples = 5000;
+const auto numSamples = 75;
 std::chrono::time_point startTime = std::chrono::steady_clock::now();
 
 int main(int argc, char* argv[]) {
@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
     scene.add(std::make_shared<Plane>(Vec3(0, -3, 0), Vec3(0, 1, 0), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_shared<Plane>(Vec3(0, 0, 20), Vec3(0, 0, -1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
     scene.add(std::make_shared<Plane>(Vec3(0, 0, -1), Vec3(0, 0, 1), Material::materialWithDiffusion(Vec3(1, 1, 1))));
-    scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(1, 1, 1), 0.13, 0.1)));
+    scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(1, 1, 1), 0.13, 0.5)));
     //scene.add(std::make_shared<Sphere>(Vec3(0, 1.75, 6), 1.25, Material::refractiveMaterial(1.333) + Material::reflectiveMaterial()));//Material(Vec3(1, 1, 1), 100, 10)));
 
     /*scene.add(std::make_shared<Disk>(Vec3(3, 0, 7), Vec3(-1, 0, 0), 1.0, Material(Vec3(0.8, 0.2, 0.8), Vec3(1, 1, 1))));
@@ -82,13 +82,17 @@ int main(int argc, char* argv[]) {
     };
 
     struct Pixels {
+	private:
+		std::mutex nextMutex;
+		std::mutex cueMutex;
+
+		std::vector<Pixel> pixels;
+		std::vector<Pixel> closed;
+		std::vector<Pixel> canRender;
+
     public:
         int widht, height;
-        std::mutex mutex;
 
-        std::vector<Pixel> pixels;
-        std::vector<Pixel> closed;
-        std::vector<Pixel> canRender;
         Pixels(int width, int height) : widht(width), height(height) {
             pixels.reserve(width * height);
             closed.reserve(width * height);
@@ -101,7 +105,7 @@ int main(int argc, char* argv[]) {
         }
 
         std::pair<Pixel, bool> next() {
-            std::unique_lock lock(mutex);
+            std::unique_lock lock(nextMutex);
 
             if (pixels.empty())
                 return {};
@@ -122,6 +126,45 @@ int main(int argc, char* argv[]) {
 
             return {pixel, true};
         }
+
+		bool noPixels() {
+			std::unique_lock lock(nextMutex);
+
+			bool empty = pixels.size() == 0;
+
+			lock.unlock();
+
+			return empty;
+		}
+
+		void addToRenderCue(Pixel pixel) {
+			std::unique_lock lock(cueMutex);
+
+			canRender.emplace_back(pixel);
+
+			lock.unlock();
+		}
+
+		Pixel getNextPixelInCue() {
+			std::unique_lock lock(cueMutex);
+
+			Pixel pixel = canRender.front();
+
+			canRender.erase(canRender.begin());
+
+			lock.unlock();
+			return pixel;
+		}
+
+		bool hasNextPixelInCue() {
+			std::unique_lock lock(cueMutex);
+
+			bool empty = canRender.size() == 0;
+
+			lock.unlock();
+
+			return !empty;
+		}
     };
 
     Pixels pixelArray(WIDTH, HEIGHT);
@@ -129,8 +172,8 @@ int main(int argc, char* argv[]) {
     std::mt19937 rng(0);
 
     std::vector<std::thread> threads;
-    threads.reserve(std::thread::hardware_concurrency() + 1);
-    for (auto i = 0u; i < std::thread::hardware_concurrency(); i++) {
+	threads.reserve(std::thread::hardware_concurrency() + 1);
+	for (auto i = 0u; i < std::thread::hardware_concurrency(); i++) {
         threads.emplace_back([&] {
             std::pair<Pixel, bool> pixel;
             while ((pixel = pixelArray.next()).second) {
@@ -148,12 +191,12 @@ int main(int argc, char* argv[]) {
                     _output[pixel.first.x + pixel.first.y * WIDTH] += color;
                 }
 
-                pixelArray.canRender.emplace_back(pixel.first);
+                pixelArray.addToRenderCue(pixel.first);
             }
         });
     }
 
-    /*threads.emplace_back([&]{
+    threads.emplace_back([&]{
         SDL_Window *window;
         SDL_Renderer *renderer;
         SDL_Init(SDL_INIT_VIDEO);
@@ -163,36 +206,37 @@ int main(int argc, char* argv[]) {
 
 		SDL_Event evt;
 
-        while (pixelArray.pixels.size() != 0) {
-			//SDL_Delay(WINDOW_SLEEP_TIME);
+        while (!pixelArray.noPixels()) {
+			SDL_Delay(WINDOW_SLEEP_TIME);
 
 			SDL_PollEvent(&evt);
 
 			if (evt.type == SDL_QUIT) {
 				for (auto &thread : threads) {
+					thread.detach();
+
 					thread.~thread();
 				}
 			}
 
-            if (pixelArray.canRender.empty()) continue;
+			while (pixelArray.hasNextPixelInCue()) {
+				Pixel currentPixel = pixelArray.getNextPixelInCue();
 
-			Pixel currentPixel = pixelArray.canRender.front();
+				auto c = _output[currentPixel.x + currentPixel.y * WIDTH];
 
-            auto c = _output[currentPixel.x + currentPixel.y * WIDTH];
+				c *= 1.0 / numSamples;
 
-            c *= 1.0 / numSamples;
+				SDL_SetRenderDrawColor(renderer, rgbToInt(c.x), rgbToInt(c.y), rgbToInt(c.z), 255);
 
-            SDL_SetRenderDrawColor(renderer, rgbToInt(c.x), rgbToInt(c.y), rgbToInt(c.z), 255);
+				SDL_RenderDrawPoint(renderer, currentPixel.x, currentPixel.y);
+			}
 
-            SDL_RenderDrawPoint(renderer, currentPixel.x, currentPixel.y);
             SDL_RenderPresent(renderer);
-
-            pixelArray.canRender.erase(pixelArray.canRender.begin());
         }
 
         SDL_DestroyWindow(window);
         SDL_Quit();
-    });*/
+    });
 
     for (auto &thread : threads) {
         thread.join();

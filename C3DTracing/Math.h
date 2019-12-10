@@ -99,7 +99,8 @@ public:
 		auto halfTheta2 = halfTheta * halfTheta;
 		auto roughness2 = roughness * roughness;
 
-		return std::exp(-(1-halfTheta2)/(halfTheta2 * roughness2)) / (M_PI * roughness2 * halfTheta2 * halfTheta2);
+		return std::exp((halfTheta2 - 1)/(halfTheta2 * roughness2)) /
+			   (roughness2 * halfTheta2 * halfTheta2);
 	}
 
 	static double fresnelBRDF(double viewHalfTheta, double refractiveIndexOfRay, double refractiveIndexOfObject) {

@@ -1,0 +1,13 @@
+﻿  pch.cpp
+  Disk.cpp
+  InvertedDisk.cpp
+  Main.cpp
+c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(1): warning C4603: 'USING_VISUAL_STUDIO': macro is not defined or definition is different after precompiled header use
+  c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(1): note: Add macro to precompiled header instead of defining here
+  c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(6): note: use of precompiled header
+c:\users\jonas\documents\programming\c++\c3dtracing\c3dtracing\main.cpp(21): fatal error C1083: Cannot open include file: 'SDL.h': No such file or directory
+  Math.cpp
+  Plane.cpp
+  Scene.cpp
+  Sphere.cpp
+  Vec3.cpp
