@@ -50,13 +50,13 @@ public:
         Vec3 bitangent(abs(normal.x) == 1 ? Vec3(0, -1, 0) : Vec3(-normal.y * normal.y - normal.z * normal.z, normal.x * normal.y, normal.x * normal.z).normalize());
 
         double r = sqrt(unit(rng));
-        double theta = unit(rng) * 2.0 * M_PI;
+        double theta = unit(rng) * M_PI * 2.0;
 
         double x = r * cos(theta);
         double y = r * sin(theta);
         double z = sqrt(1.0 - (x * x + y * y));
 
-        return (normal * z + tangent * x + bitangent * y).normalize();
+        return normal * z + tangent * x + bitangent * y;
     }
 
 	static Vec3 BRDF(Vec3 view, Vec3 reflectRay, Vec3 normal, Material *mat, double refractiveIndexOfRay, Vec3 diffues, Vec3 reflectColor) {
@@ -70,7 +70,7 @@ public:
 
 		auto fr = fresnelBRDF(viewHalfTheta, refractiveIndexOfRay, mat->refractiveIndex);
 
-		return reflectColor * (diffues * (1 - fr) + Vec3(1, 1, 1) * (fr * distributionBRDF(halfTheta, mat->roughness) * geometricBRDF(halfTheta, viewTheta, reflectTheta, viewHalfTheta) / (4 * viewTheta * reflectTheta)));
+		return reflectColor * (diffues * (1 - fr) + (fr * distributionBRDF(halfTheta, mat->roughness) * geometricBRDF(halfTheta, viewTheta, reflectTheta, viewHalfTheta) / (4 * viewTheta * reflectTheta)));
 	}
 
 	static double geometricBRDF(double halfTheta, double viewTheta, double reflectTheta, double viewHalfTheta) {

@@ -24,6 +24,6 @@ public:
         Geometry *hitGeometry;
     };
 
-	virtual std::pair<Hit, bool> intersects(Ray) { return std::pair<Hit, bool> { {}, false }; }
+	virtual std::pair<Hit, bool> intersects(Ray&) { return std::pair<Hit, bool> { {}, false }; }
 	virtual bool inside(Vec3) { return false; }
 };

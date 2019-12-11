@@ -1,7 +1,7 @@
 #include "pch.h"
 #include "InvertedDisk.h"
 
-std::pair<Geometry::Hit, bool> InvertedDisk::intersects(Ray ray) {
+std::pair<Geometry::Hit, bool> InvertedDisk::intersects(Ray &ray) {
 	auto hit = Plane::intersects(ray);
 
 	if (!hit.second) return hit;

@@ -3,7 +3,7 @@
 #include <cmath>
 #include <iostream>
 
-std::pair<Geometry::Hit, bool> Sphere::intersects(Ray ray) {
+std::pair<Geometry::Hit, bool> Sphere::intersects(Ray &ray) {
 	Vec3 toSphere = pos - ray.pos;
 	double distanceSqrt = toSphere.lengthSqrt();
 

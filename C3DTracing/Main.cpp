@@ -36,8 +36,8 @@ const auto xFOV = 60;
 const auto yFOV = xFOV / aspectRatio;
 Vec3 xCam(sin(xFOV * acos(-1) / 180), 0, 0); //TODO: Why doesn't it like const?
 Vec3 yCam(0, sin(yFOV * acos(-1) / 180), 0);
-//const auto numSamples = 5000;
-const auto numSamples = 750;
+const auto numSamples = 5000;
+//const auto numSamples = 75;
 std::chrono::time_point startTime = std::chrono::steady_clock::now();
 
 int main(int argc, char* argv[]) {
@@ -59,7 +59,7 @@ int main(int argc, char* argv[]) {
 	//scene.add(std::make_shared<Sphere>(Vec3(-5, 1.75, 10), 1.25, Material(Vec3(0.8314, 0.6863, 0.2157), 2, 1.0 / 6.0)));
 	//scene.add(std::make_shared<Sphere>(Vec3(-3, 1.75, 15), 1.25, Material(Vec3(0.8314, 0.6863, 0.2157), 2, 2.0 / 6.0)));
 	//scene.add(std::make_shared<Sphere>(Vec3(-1, 1.75, 10), 1.25, Material(Vec3(0.8314, 0.6863, 0.2157), 2, 3.0 / 6.0)));
-	scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(0.8314, 0.6863, 0.2157), 2, 2.0 / 6.0)));
+	scene.add(std::make_shared<Sphere>(Vec3(1, 1.75, 10), 1.25, Material(Vec3(0.8314, 0.6863, 0.2157), 2, 0.1)));
 	//scene.add(std::make_shared<Sphere>(Vec3(3, 1.75, 10), 1.25, Material(Vec3(0.8314, 0.6863, 0.2157), 2, 5.0 / 6.0)));
 	//scene.add(std::make_shared<Sphere>(Vec3(5, 1.75, 15), 1.25, Material(Vec3(0.8314, 0.6863, 0.2157), 2, 6.0 / 6.0)));
     //scene.add(std::make_shared<Sphere>(Vec3(0, 1.75, 6), 1.25, Material::refractiveMaterial(1.333) + Material::reflectiveMaterial()));//Material(Vec3(1, 1, 1), 100, 10)));

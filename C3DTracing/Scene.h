@@ -19,18 +19,17 @@ public:
     }
 
     std::pair<Geometry::Hit, bool> findGeometry(Ray &ray) {
-        std::unique_ptr<Geometry::Hit> closest = nullptr;
+		Geometry::Hit closest;
 
         for (auto &g : scene_) {
             auto h = g->intersects(ray);
 
-            if (h.second && (closest == nullptr || h.first.distance < closest->distance)) {
-                Geometry::Hit clone = Geometry::Hit(h.first);
-                closest = std::make_unique<Geometry::Hit>(clone);
+            if (h.second && (closest.distance == -1 || h.first.distance < closest.distance)) {
+				closest = Geometry::Hit(h.first);
             }
         }
 
-        if (closest == nullptr) return {};
-        else return {closest.get(), true};
+        if (closest.distance == -1) return {};
+        else return {closest, true};
     }
 };

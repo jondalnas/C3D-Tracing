@@ -21,8 +21,16 @@ public:
 		return Vec3(x + v.x, y + v.y, z + v.z);
 	}
 
+	Vec3 operator+(double k) {
+		return Vec3(x + k, y + k, z + k);
+	}
+
 	Vec3 operator-(Vec3 v) {
 		return Vec3(x - v.x, y - v.y, z - v.z);
+	}
+
+	Vec3 operator-() {
+		return Vec3(-x, -y, -z);
 	}
 
     Vec3 operator*=(double k) {

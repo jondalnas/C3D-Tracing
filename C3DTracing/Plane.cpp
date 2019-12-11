@@ -1,13 +1,15 @@
 #include "pch.h"
 #include "Plane.h"
 
-std::pair<Geometry::Hit, bool> Plane::intersects(Ray ray) {
-    auto denom = ray.dir.dot(normal*-1);
+std::pair<Geometry::Hit, bool> Plane::intersects(Ray &ray) {
+	auto negNorm = -normal;
 
-    if (denom < 1e-4) return {};
+    auto denom = ray.dir.dot(negNorm);
+
+    if (denom < 0) return {};
 
     auto p0l0 = pos - ray.pos;
-    auto t = p0l0.dot(normal*-1) / denom;
+    auto t = p0l0.dot(negNorm) / denom;
 
     if (t < 0) return {};
 
